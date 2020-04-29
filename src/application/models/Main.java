@@ -11,9 +11,9 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("Sample.fxml"));
+			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("/application/views/Sample.fxml"));
 			Scene scene = new Scene(root,400,400);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("/application/views/application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {
@@ -23,5 +23,9 @@ public class Main extends Application {
 	
 	public static void main(String[] args) {
 		launch(args);
+		
+		Database db = new Database();
+		db.getUsers();
+		
 	}
 }

@@ -2,7 +2,6 @@ package application.models;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
@@ -65,7 +64,7 @@ public class Conexion {
 		String dbname = this.propiedades.getProperty("dbname");
 		
 		 try {
-			conexion = DriverManager.getConnection("jdbc:mysql://" + hostaname + "/" + dbname, dbuser, dbpass);
+			conexion = DriverManager.getConnection("jdbc:mysql://"+hostaname+"/"+dbname,dbuser,dbpass);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

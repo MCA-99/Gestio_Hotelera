@@ -38,4 +38,8 @@ public class LoginController {
                 
         // translateAnimationForm(signinForm, Duration.millis(500), Duration.millis(500));
     }
+    
+    void login() {
+    	
+    }
 }

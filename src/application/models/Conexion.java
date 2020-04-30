@@ -14,7 +14,6 @@ public class Conexion {
 	private String ruta = null;
 	private Properties propiedades = null;
 	private static Conexion conexion = null;
-	private Connection conexionDB = null;
 	
 	/*CONSTRUCTORES*/
 	
@@ -39,7 +38,7 @@ public class Conexion {
 		}
 	}
 	
-	private Connection conectar() {
+	public Connection conectar() {
 		
 		this.propiedades = new Properties();
 		InputStream input = null;
@@ -74,10 +73,6 @@ public class Conexion {
 	
 	public Properties getPropiedades() {
 		return this.propiedades;
-	}
-	
-	public Connection getConexionDB() {
-		return this.conexionDB;
 	}
 	
 }

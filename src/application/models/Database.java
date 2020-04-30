@@ -13,7 +13,7 @@ public class Database {
 	/*CONSTRUCTOR*/
 	
 	public Database(){
-		this.conexiondb = conexion.getConexionDB();
+		this.conexiondb = conexion.conectar();
 	}
 	
 	/*METODOS*/
@@ -24,7 +24,7 @@ public class Database {
 			ResultSet rs = s.executeQuery("SELECT * FROM Usuaris");
 			while (rs.next())
 			{
-			    System.out.println (rs.getInt (1) + " " + rs.getString (2)+ " " + rs.getDate(3));
+			    System.out.println (rs.getString("nom_usuari"));
 			}
 			conexiondb.close();
 		} catch (SQLException e) {

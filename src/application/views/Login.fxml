@@ -1,7 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.GaussianBlur?>
 <?import javafx.scene.layout.BorderPane?>
-	
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.SampleController">
-	<!-- TODO Add Nodes -->
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.LoginController">
+   <center>
+      <Pane prefHeight="675.0" prefWidth="1230.0" BorderPane.alignment="CENTER">
+         <children>
+            <MediaView fx:id="bgVideo" fitHeight="700.0" fitWidth="1240.0">
+               <viewport>
+                  <Rectangle2D />
+               </viewport></MediaView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="278.0" layoutX="743.0" layoutY="192.0" opacity="0.4" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="413.0">
+               <effect>
+                  <GaussianBlur />
+               </effect>
+            </Rectangle>
+            <Button layoutX="771.0" layoutY="381.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="155.0" style="-fx-background-radius: 10px;" text="Iniciar Sessió">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="966.0" layoutY="381.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="155.0" style="-fx-background-radius: 10px;" text="Registrar-se">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="771.0" layoutY="209.0" prefHeight="29.0" prefWidth="97.0" text="Nom d'Usuari" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="771.0" layoutY="287.0" prefHeight="29.0" prefWidth="97.0" text="Contrasenya" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField layoutX="771.0" layoutY="238.0" prefHeight="36.0" prefWidth="350.0" />
+            <PasswordField layoutX="771.0" layoutY="316.0" prefHeight="36.0" prefWidth="350.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="521.0" layoutX="55.0" layoutY="77.0" opacity="0.56" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="618.0">
+               <effect>
+                  <GaussianBlur />
+               </effect>
+            </Rectangle>
+            <Label layoutX="102.0" layoutY="109.0" prefHeight="115.0" prefWidth="463.0" style="-fx-font-weight: bold;" text="PROJECTE GESTIÓ HOTELERA" textFill="WHITE">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Label>
+            <Label layoutX="102.0" layoutY="238.0" prefHeight="50.0" prefWidth="124.0" style="-fx-font-weight: bold;" text="Alumnes:" textFill="WHITE">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="102.0" layoutY="292.0" prefHeight="49.0" prefWidth="238.0" style="-fx-font-weight: bold;" text="Marc Capdet Aguilera" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="102.0" layoutY="334.0" prefHeight="49.0" prefWidth="328.0" style="-fx-font-weight: bold;" text="Abdelmounaim El Jellouly Bota" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </center>
 </BorderPane>

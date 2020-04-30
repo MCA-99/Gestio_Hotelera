@@ -26,7 +26,8 @@ public class Main extends Application {
 	public static void main(String[] args) {
 		launch(args);
 		
-		Database db = new Database();
+		Database db = Database.getDatabase();
+		
 		db.getUsers();
 		
 	}

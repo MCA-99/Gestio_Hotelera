@@ -11,9 +11,9 @@ import java.util.Properties;
 
 public class Conexion {
 	/*ATRIBUTOS*/
-	private String ruta = null;
-	private Properties propiedades = null;
-	private static Conexion conexion = null;
+	private String ruta;
+	private Properties propiedades;
+	private static Conexion conexion ;
 	
 	/*CONSTRUCTORES*/
 	
@@ -24,22 +24,20 @@ public class Conexion {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		};
-		conectar();
 	}
 	
 	/*METODOS*/
 	
 	public static Conexion getConexion() {
-		if(Conexion.conexion != null) {
-			return Conexion.conexion;
-		}else {
+		Conexion con = Conexion.conexion;
+		if(con == null) {
 			Conexion.conexion = new Conexion();
-			return Conexion.conexion;
+			con = Conexion.conexion;
 		}
+		return con;
 	}
 	
 	public Connection conectar() {
-		
 		this.propiedades = new Properties();
 		InputStream input = null;
 		Connection conexion = null;
@@ -69,10 +67,6 @@ public class Conexion {
 			e.printStackTrace();
 		}
 		 return conexion;
-	}
-	
-	public Properties getPropiedades() {
-		return this.propiedades;
 	}
 	
 }

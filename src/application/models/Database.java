@@ -8,15 +8,26 @@ import java.sql.Statement;
 
 public class Database {
 	/*ATRIBUTOS*/
-	private Conexion conexion = Conexion.getConexion();
-	private Connection conexiondb = null;
+	private Conexion conexion;
+	private Connection conexiondb;
+	private static Database database; 
 	/*CONSTRUCTOR*/
 	
-	public Database(){
+	private Database(){
+		this.conexion = Conexion.getConexion();
 		this.conexiondb = conexion.conectar();
 	}
 	
 	/*METODOS*/
+	
+	public static Database getDatabase() {
+		Database db = Database.database;
+		if(db == null) {
+			Database.database = new Database();
+			db = Database.database;
+		}
+		return db;
+	}
 	
 	public void getUsers() {
 		try {
@@ -32,8 +43,6 @@ public class Database {
 			e.printStackTrace();
 		}
 		
-		System.out.println(conexion.getPropiedades());
-		
-		
 	}
+	
 }

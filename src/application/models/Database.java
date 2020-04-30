@@ -32,6 +32,8 @@ public class Database {
 			e.printStackTrace();
 		}
 		
+		System.out.println(conexion.getPropiedades());
+		
 		
 	}
 }

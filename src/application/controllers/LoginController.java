@@ -71,12 +71,16 @@ public class LoginController {
     
     @FXML
     void goToRegister(ActionEvent event) throws IOException {
-    	Stage appStage;
-        Parent root;
-    	appStage=(Stage)registrarse.getScene().getWindow();
-        root=FXMLLoader.load(getClass().getResource("/application/views/Register.fxml"));
-        Scene scene=new Scene(root);
-        appStage.setScene(scene);
-        appStage.show();
+    	try {
+	    	Stage appStage;
+	        Parent root;
+	    	appStage=(Stage)registrarse.getScene().getWindow();
+	        root=FXMLLoader.load(getClass().getResource("/application/views/Register.fxml"));
+	        Scene scene=new Scene(root);
+	        appStage.setScene(scene);
+	        appStage.show();
+    	} catch(Exception e) {
+			e.printStackTrace();
+		}
     }
 }

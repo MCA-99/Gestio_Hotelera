@@ -24,7 +24,7 @@
 		               <viewport>
 		                  <Rectangle2D />
 		               </viewport></MediaView>
-		            <Rectangle arcHeight="5.0" arcWidth="5.0" height="281.0" layoutX="743.0" layoutY="192.0" opacity="0.4" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="413.0">
+		            <Rectangle arcHeight="5.0" arcWidth="5.0" height="334.0" layoutX="743.0" layoutY="192.0" opacity="0.4" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="413.0">
 		               <effect>
 		                  <GaussianBlur />
 		               </effect>
@@ -82,6 +82,11 @@
 		                  <Font size="22.0" />
 		               </font>
 		            </Label>
+                  <Label fx:id="loginError" layoutX="772.0" layoutY="454.0" prefHeight="64.0" prefWidth="354.0" style="-fx-alignment: center; -fx-font-weight: bold;" textFill="#ff0707">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
 		         </children>
 		      </Pane>
 		   </center>

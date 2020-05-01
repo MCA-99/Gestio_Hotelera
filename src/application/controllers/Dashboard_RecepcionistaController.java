@@ -1,6 +1,8 @@
 package application.controllers;
 
-import java.awt.event.ActionEvent;
+import application.models.Database;
+import application.models.Main;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,23 +12,26 @@ import javafx.stage.Stage;
 
 public class Dashboard_RecepcionistaController {
 
-    @FXML
-    private Button gestio_clients;
+
+	private Database db = Database.getDatabase();
+	
+	@FXML
+    private Button gestio_clients_btn;
 
     @FXML
-    private Button serveis_extra;
+    private Button serveis_extra_btn;
 
     @FXML
-    private Button reserva_habitacions;
+    private Button reserva_habitacions_btn;
 
     @FXML
-    private Button gestio_pagaments;
+    private Button gestio_pagaments_btn;
 
     @FXML
-    private Button consulta_informes;
+    private Button consulta_informes_btn;
 
     @FXML
-    private Button logout;
+    private Button logout_btn;
 
     @FXML
     void consulta_informes(ActionEvent event) {
@@ -46,13 +51,8 @@ public class Dashboard_RecepcionistaController {
     @FXML
     void logout(ActionEvent event) {
     	try {
-	    	Stage appStage;
-	        Parent root;
-	    	appStage=(Stage)logout.getScene().getWindow();
-	        root=FXMLLoader.load(getClass().getResource("/application/views/Login.fxml"));
-	        Scene scene=new Scene(root);
-	        appStage.setScene(scene);
-	        appStage.show();
+    		db.clearUser();
+    		Main.changeScene("/application/views/Login.fxml");
     	} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -67,5 +67,6 @@ public class Dashboard_RecepcionistaController {
     void serveis_extra(ActionEvent event) {
 
     }
+
 
 }

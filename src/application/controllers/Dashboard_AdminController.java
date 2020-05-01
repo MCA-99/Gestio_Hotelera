@@ -1,5 +1,7 @@
 package application.controllers;
 
+import application.models.Database;
+import application.models.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,7 +11,7 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class Dashboard_AdminController {
-
+	private Database db = Database.getDatabase();
     @FXML
     private Button gestio_habitacions;
 
@@ -48,13 +50,8 @@ public class Dashboard_AdminController {
     @FXML
     void logout(ActionEvent event) {
     	try {
-	    	Stage appStage;
-	        Parent root;
-	    	appStage=(Stage)logout.getScene().getWindow();
-	        root=FXMLLoader.load(getClass().getResource("/application/views/Login.fxml"));
-	        Scene scene=new Scene(root);
-	        appStage.setScene(scene);
-	        appStage.show();
+    		db.clearUser();
+    		Main.changeScene("/application/views/Login.fxml");
     	} catch(Exception e) {
 			e.printStackTrace();
 		}

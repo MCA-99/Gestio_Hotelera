@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.media.Media;
@@ -20,7 +21,7 @@ import javafx.util.Duration;
 public class LoginController {
 	
 	private Database db = Database.getDatabase();
-	private Usuari userLoged = Database.getUserLoged();
+	private Usuari userLoged = db.getUserLoged();
 	
 	public static Stage register;
 	
@@ -42,7 +43,7 @@ public class LoginController {
     private PasswordField contrasenya;
 
     @FXML
-    private Text loginerror;
+    private Label loginError;
     
     @FXML
     void initialize() {
@@ -66,27 +67,27 @@ public class LoginController {
     void login(ActionEvent event) {
     	String user = usuari.getText();
     	String pass = db.getMD5(contrasenya.getText());
-    	    	
-    	if(db.logear(user, pass) == true && userLoged.getRol() == "admin") {
-    		
-    		System.out.println("Usuari logejat amb exit.");
-    		System.out.println("nom usuari: "+userLoged.getNom_usuari() + " contrasenya: " + userLoged.getContrasenya());
-    		Main.changeScene("/application/views/Dashboard_Admin.fxml");
-    		
-    	} else if (db.logear(user, pass) == true && userLoged.getRol() == "rep") {
-    		
-    		System.out.println("Usuari logejat amb exit.");
-    		System.out.println("nom usuari: "+userLoged.getNom_usuari() + " contrasenya: " + userLoged.getContrasenya());
-    		Main.changeScene("/application/views/Dashboard_Recepcionista.fxml");
-    		
-    	} else {
-    		
-    		System.out.println("Usuari i/o contrasenya incorrecta.");
-    		System.out.println("nom usuari: " + usuari.getText() + " contrasenya: " + db.getMD5(contrasenya.getText()));
-    		
-    	}
     	
-    	System.out.println(userLoged.getId_usuari());
+    	if(db.logear(user, pass)) {
+    		userLoged = db.getUserLoged();
+    		switch(userLoged.getRol()) {
+	    		case "admin":
+	    			System.out.println("Usuari logejat amb exit.");
+	        		System.out.println("nom usuari: "+userLoged.getNom_usuari() + " contrasenya: " + userLoged.getContrasenya());
+	        		Main.changeScene("/application/views/Dashboard_Admin.fxml");
+	    			break;
+	    		case "rep":
+	    			System.out.println("Usuari logejat amb exit.");
+	        		System.out.println("nom usuari: "+userLoged.getNom_usuari() + " contrasenya: " + userLoged.getContrasenya());
+	        		Main.changeScene("/application/views/Dashboard_Recepcionista.fxml");
+	    			break;
+	    		default:
+	    			break;
+    		}
+    	}
+    	else {
+    		loginError.setText("Inici de sesió incorrecte");
+    	}
     }
    
     @FXML

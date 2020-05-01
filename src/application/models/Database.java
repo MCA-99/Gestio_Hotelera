@@ -35,8 +35,12 @@ public class Database {
 		return db;
 	}
 	
-	public static Usuari getUserLoged() {
+	public Usuari getUserLoged() {
 		return userLoged;
+	}
+	
+	public void clearUser() {
+		userLoged = null;
 	}
 	
 	public void getUsers() {

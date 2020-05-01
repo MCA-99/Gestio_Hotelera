@@ -45,9 +45,19 @@ public class Database {
 		
 	}
 	
-	public boolean comprovarUsuari() {
-		getUsers();
-		return false;
+	public boolean comprovarUsuari(String usuari, String contrasenya) {
+		boolean resultado = false;
+		try {
+			Statement s = this.conexiondb.createStatement();
+			ResultSet rs = s.executeQuery("SELECT * FROM Usuaris WHERE nom_usuari = '"+usuari+"' AND contrasenya = '"+contrasenya+"'");
+			if(rs.next()) {
+				resultado = true;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return resultado;
 	}
 	
 }

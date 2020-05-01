@@ -61,11 +61,19 @@ public class LoginController {
     
     @FXML
     void login(ActionEvent event) {
-    	String usuari = usuari.getText();
-    	String contrasenya = contrasenya.getText();
+    	String user = usuari.getText();
+    	String pass = contrasenya.getText();
     	
-    	if(db.comprovarUsuari() == true) {
+    	if(db.comprovarUsuari(user, pass) == true) {
     		System.out.println("Usuari logejat amb exit.");
     	}
+    	else {
+    		System.out.println("Usuaro i/o contrasenya incorrecta.");
+    	}
+    }
+    
+    @FXML
+    void goToRegister(ActionEvent event) {
+    	
     }
 }

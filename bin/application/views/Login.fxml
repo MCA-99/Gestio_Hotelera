@@ -34,7 +34,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="registrarse" layoutX="966.0" layoutY="381.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="155.0" style="-fx-background-radius: 10px;" text="Registrar-se">
+            <Button fx:id="registrarse" layoutX="966.0" layoutY="381.0" mnemonicParsing="false" onAction="#goToRegister" prefHeight="68.0" prefWidth="155.0" style="-fx-background-radius: 10px;" text="Registrar-se">
                <font>
                   <Font size="15.0" />
                </font>

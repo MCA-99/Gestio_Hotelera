@@ -73,7 +73,7 @@ public class Database {
 				userLoged.setDNI(rs.getString("DNI"));
 				userLoged.setPassaport(rs.getString("passaport"));
 				userLoged.setNacionalitat(rs.getString("nacionalitat"));
-				userLoged.setTelefon(rs.getString("telefon"));
+				userLoged.setTelefon(rs.getInt("telefon"));
 				userLoged.setEmail(rs.getString("email"));
 				userLoged.setEstatcivil(rs.getString("estatcivil"));
 				userLoged.setOcupacio(rs.getString("ocupacio"));

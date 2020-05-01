@@ -14,7 +14,7 @@ public class Usuari {
 	private String DNI;
 	private String passaport;
 	private String nacionalitat;
-	private String telefon;
+	private int telefon;
 	private String email;
 	private String estatcivil;
 	private String ocupacio;
@@ -101,11 +101,11 @@ public class Usuari {
 		this.nacionalitat = nacionalitat;
 	}
 
-	public String getTelefon() {
+	public int getTelefon() {
 		return telefon;
 	}
 
-	public void setTelefon(String telefon) {
+	public void setTelefon(int telefon) {
 		this.telefon = telefon;
 	}
 

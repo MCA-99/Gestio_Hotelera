@@ -26,7 +26,7 @@
                   <GaussianBlur />
                </effect>
             </Rectangle>
-            <Button fx:id="register_button_recepcionista" layoutX="945.0" layoutY="456.0" mnemonicParsing="false" onAction="#register_button" prefHeight="68.0" prefWidth="155.0" style="-fx-background-radius: 10px;" text="Registrar-se">
+            <Button fx:id="register_button_recepcionista" layoutX="945.0" layoutY="456.0" mnemonicParsing="false" onAction="#register_button_recepcionista" prefHeight="68.0" prefWidth="155.0" style="-fx-background-radius: 10px;" text="Registrar-se">
                <font>
                   <Font size="15.0" />
                </font>
@@ -94,6 +94,11 @@
                </font>
             </Label>
             <TextField fx:id="email" layoutX="492.0" layoutY="350.0" prefHeight="36.0" prefWidth="350.0" />
+            <Label fx:id="error" contentDisplay="CENTER" layoutX="867.0" layoutY="536.0" prefHeight="17.0" prefWidth="312.0" style="-fx-text-alignment: center;" textAlignment="CENTER" textFill="#fc3d3d" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </center>

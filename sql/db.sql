@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: mysql
--- Tiempo de generación: 01-05-2020 a las 15:14:40
+-- Tiempo de generación: 01-05-2020 a las 17:04:08
 -- Versión del servidor: 10.4.12-MariaDB-1:10.4.12+maria~bionic
 -- Versión de PHP: 7.4.5
 
@@ -90,7 +90,7 @@ CREATE TABLE `Serveis` (
 CREATE TABLE `Usuaris` (
   `id_usuari` int(11) NOT NULL,
   `nom_usuari` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `contrasenya` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `contrasenya` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `nom` varchar(15) CHARACTER SET utf8 DEFAULT NULL,
   `cognom1` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
   `cognom2` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
@@ -111,7 +111,8 @@ CREATE TABLE `Usuaris` (
 --
 
 INSERT INTO `Usuaris` (`id_usuari`, `nom_usuari`, `contrasenya`, `nom`, `cognom1`, `cognom2`, `DNI`, `passaport`, `nacionalitat`, `telefon`, `email`, `estatcivil`, `ocupacio`, `rol`, `activo`, `timestamp`) VALUES
-(1, 'admin', 'admin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-04-30 13:20:53');
+(1, 'admin', 'admin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2020-04-30 13:20:53'),
+(2, 'test', '098f6bcd4621d373cade4e832627b4f6', 'test', 'test', 'test', 'test', 'test', 'test', 665112212, 'test', NULL, NULL, 'rep', 0, '2020-05-01 17:02:29');
 
 --
 -- Índices para tablas volcadas
@@ -149,7 +150,7 @@ ALTER TABLE `Usuaris`
 -- AUTO_INCREMENT de la tabla `Usuaris`
 --
 ALTER TABLE `Usuaris`
-  MODIFY `id_usuari` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_usuari` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

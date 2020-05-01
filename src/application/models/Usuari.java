@@ -1,5 +1,8 @@
 package application.models;
 
+import java.sql.Connection;
+import java.sql.Statement;
+
 public class Usuari {
 	/*ATRIBUTOS*/
 	private int id_usuari;
@@ -18,12 +21,12 @@ public class Usuari {
 	private String rol;
 	private String timestamp;
 	
-	private Database database;
-	
+	private Database db;
+
 	/*CONSTRUCTORES*/
 	
 	public Usuari() {
-		
+		this.db = Database.getDatabase();
 	}
 
 	public int getId_usuari() {
@@ -147,6 +150,15 @@ public class Usuari {
 	}
 	
 	/*METODOS*/
+	
+	public void insertRecepcionista(String nom_usuari, String contrasenya, String nom, String cognom1, String cognom2, String DNI, String passaport, String nacionalitat, String telefon, String email) {
+		db.insertRecepcionista(nom_usuari, contrasenya, nom, cognom1, cognom2, DNI, passaport, nacionalitat, telefon, email);
+		
+	}
+	
+	public void insertCliente() {
+		
+	}
 	
 	
 }

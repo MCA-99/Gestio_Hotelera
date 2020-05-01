@@ -22,7 +22,7 @@ import javafx.util.Duration;
 public class LoginController {
 	
 	private Database db = Database.getDatabase();
-	private Usuari userLoged = db.getUserLoged();
+	private Usuari userLoged = Database.getUserLoged();
 	@FXML MediaView bgVideo;
     String path = new File("src/bg/bg.mp4").getAbsolutePath();
 	Media me = new Media(new File(path).toURI().toString());

@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 import application.models.Database;
+import application.models.Usuari;
 import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
@@ -22,6 +23,7 @@ import javafx.util.Duration;
 public class LoginController {
 	
 	private Database db = Database.getDatabase();
+	private Usuari userLoged = db.getUserLoged();
 	@FXML MediaView bgVideo;
     String path = new File("src/bg/bg.mp4").getAbsolutePath();
 	Media me = new Media(new File(path).toURI().toString());
@@ -61,8 +63,9 @@ public class LoginController {
     	String user = usuari.getText();
     	String pass = contrasenya.getText();
     	
-    	if(db.comprovarUsuari(user, pass) == true) {
+    	if(db.logear(user, pass) == true) {
     		System.out.println("Usuari logejat amb exit.");
+    		System.out.println("nom usuari: "+userLoged.getNom_usuari() + " contrasenya: " + userLoged.getContrasenya());
     	}
     	else {
     		System.out.println("Usuari i/o contrasenya incorrecta.");
@@ -83,4 +86,6 @@ public class LoginController {
 			e.printStackTrace();
 		}
     }
+    
+    
 }

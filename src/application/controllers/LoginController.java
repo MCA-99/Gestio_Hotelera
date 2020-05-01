@@ -1,14 +1,20 @@
 package application.controllers;
 
 import java.io.File;
+import java.io.IOException;
 
 import application.models.Database;
 import javafx.scene.media.MediaView;
+import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
@@ -31,12 +37,9 @@ public class LoginController {
 
     @FXML
     private PasswordField contrasenya;
-    @FXML // This method is called by the FXMLLoader when initialization is complete
-    
+    @FXML
+   
     void initialize() {
-    	// Set video as the login background
-    	// Look for good short videos
-    	
     	md.setOnEndOfMedia(new Runnable() {
 			
 			@Override
@@ -50,12 +53,6 @@ public class LoginController {
     	md.setAutoPlay(true);
     	md.setVolume(0);
     	
-    	
-    	// signinForm.setTranslateY(500);
-        // signupForm.setTranslateY(500);
-        // recoverForm.setTranslateY(500);
-                
-        // translateAnimationForm(signinForm, Duration.millis(500), Duration.millis(500));
     }
     
     
@@ -68,12 +65,18 @@ public class LoginController {
     		System.out.println("Usuari logejat amb exit.");
     	}
     	else {
-    		System.out.println("Usuaro i/o contrasenya incorrecta.");
+    		System.out.println("Usuari i/o contrasenya incorrecta.");
     	}
     }
     
     @FXML
-    void goToRegister(ActionEvent event) {
-    	
+    void goToRegister(ActionEvent event) throws IOException {
+    	Stage appStage;
+        Parent root;
+    	appStage=(Stage)registrarse.getScene().getWindow();
+        root=FXMLLoader.load(getClass().getResource("/application/views/Register.fxml"));
+        Scene scene=new Scene(root);
+        appStage.setScene(scene);
+        appStage.show();
     }
 }

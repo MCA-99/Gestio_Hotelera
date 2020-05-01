@@ -3,7 +3,6 @@
 <?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -27,7 +26,7 @@
                   <GaussianBlur />
                </effect>
             </Rectangle>
-            <Button fx:id="register_button" layoutX="936.0" layoutY="456.0" mnemonicParsing="false" onAction="#register" prefHeight="68.0" prefWidth="155.0" style="-fx-background-radius: 10px;" text="Registrar-se">
+            <Button fx:id="register_button" layoutX="945.0" layoutY="456.0" mnemonicParsing="false" onAction="#register_button" prefHeight="68.0" prefWidth="155.0" style="-fx-background-radius: 10px;" text="Registrar-se">
                <font>
                   <Font size="15.0" />
                </font>
@@ -95,24 +94,6 @@
                </font>
             </Label>
             <TextField fx:id="email" layoutX="492.0" layoutY="350.0" prefHeight="36.0" prefWidth="350.0" />
-            <Label layoutX="492.0" layoutY="393.0" prefHeight="29.0" prefWidth="97.0" text="Estat Civil" textFill="WHITE">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Label>
-            <TextField fx:id="estat_civil" layoutX="492.0" layoutY="420.0" prefHeight="36.0" prefWidth="350.0" />
-            <Label layoutX="492.0" layoutY="463.0" prefHeight="29.0" prefWidth="97.0" text="Ocupació" textFill="WHITE">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Label>
-            <TextField fx:id="ocupacio" layoutX="492.0" layoutY="490.0" prefHeight="36.0" prefWidth="350.0" />
-            <Label layoutX="866.0" layoutY="111.0" prefHeight="29.0" prefWidth="97.0" text="Rol" textFill="WHITE">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Label>
-            <ChoiceBox fx:id="rol_list" layoutX="866.0" layoutY="138.0" prefHeight="34.0" prefWidth="248.0" />
          </children>
       </Pane>
    </center>

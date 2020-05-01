@@ -52,15 +52,6 @@ public class RegisterController {
     private TextField email;
 
     @FXML
-    private TextField estat_civil;
-
-    @FXML
-    private TextField ocupacio;
-
-    @FXML
-    private ChoiceBox<String> rol_list;
-
-    @FXML
     void register(ActionEvent event) {
 
     }
@@ -82,8 +73,7 @@ public class RegisterController {
     
     @FXML
     void register_button(ActionEvent event) {
-    	
+    	System.out.println("nombre de usuario: " + nom_usuari.getText());
     }
-
 }
 

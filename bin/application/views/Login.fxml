@@ -26,7 +26,7 @@
                   <GaussianBlur />
                </effect>
             </Rectangle>
-            <Button layoutX="771.0" layoutY="381.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="155.0" style="-fx-background-radius: 10px;" text="Iniciar Sessió">
+            <Button fx:id="accedir" layoutX="771.0" layoutY="381.0" mnemonicParsing="false" onAction="#login" prefHeight="68.0" prefWidth="155.0" style="-fx-background-radius: 10px;" text="Iniciar Sessió">
                <font>
                   <Font size="15.0" />
                </font>
@@ -34,7 +34,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="966.0" layoutY="381.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="155.0" style="-fx-background-radius: 10px;" text="Registrar-se">
+            <Button fx:id="registrarse" layoutX="966.0" layoutY="381.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="155.0" style="-fx-background-radius: 10px;" text="Registrar-se">
                <font>
                   <Font size="15.0" />
                </font>
@@ -52,8 +52,8 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <TextField layoutX="771.0" layoutY="238.0" prefHeight="36.0" prefWidth="350.0" />
-            <PasswordField layoutX="771.0" layoutY="316.0" prefHeight="36.0" prefWidth="350.0" />
+            <TextField fx:id="usuari" layoutX="771.0" layoutY="238.0" prefHeight="36.0" prefWidth="350.0" />
+            <PasswordField fx:id="contrasenya" layoutX="771.0" layoutY="316.0" prefHeight="36.0" prefWidth="350.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="521.0" layoutX="55.0" layoutY="77.0" opacity="0.56" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="618.0">
                <effect>
                   <GaussianBlur />

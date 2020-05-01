@@ -45,4 +45,9 @@ public class Database {
 		
 	}
 	
+	public boolean comprovarUsuari() {
+		getUsers();
+		return false;
+	}
+	
 }

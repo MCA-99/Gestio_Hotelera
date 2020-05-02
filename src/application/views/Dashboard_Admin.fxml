@@ -18,7 +18,7 @@
 		                  <Font size="13.0" />
 		               </font>
 		            </Button>
-		            <Button fx:id="gestio_productes_btn" layoutX="28.0" layoutY="242.0" mnemonicParsing="false" onAction="#gestio_productes" prefHeight="68.0" prefWidth="165.0" text="Gestió de Productes">
+		            <Button fx:id="productes_btn" layoutX="28.0" layoutY="242.0" mnemonicParsing="false" onAction="#productes" prefHeight="68.0" prefWidth="165.0" text="Gestió de Productes">
 		               <font>
 		                  <Font size="13.0" />
 		               </font>

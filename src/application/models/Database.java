@@ -183,6 +183,63 @@ public class Database {
 	
 	
 	
+	
+	public ObservableList<Producte> getProductes(String filtro){
+		ObservableList<Producte> productes = FXCollections.observableArrayList();
+		
+		if(filtro != null) {
+			try {
+				Statement query = this.conexiondb.createStatement();
+				ResultSet rs = query.executeQuery("SELECT * FROM Serveis WHERE id_servei LIKE '"+filtro+"' OR nom LIKE '%"+filtro+"%' OR preu LIKE '%"+filtro+"%'");
+				while(rs.next()) {
+					Producte p = new Producte();
+					
+					p.setId_servei(rs.getInt("id_servei"));
+					p.setNom(rs.getString("nom"));
+					p.setPreu(rs.getInt("preu"));
+					
+					productes.add(p);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}	
+		}
+		
+		return productes;
+		
+	}
+	
+	public ObservableList<Producte> getProductes(){
+		ObservableList<Producte> productes = FXCollections.observableArrayList();
+		
+		try {
+			Statement query = this.conexiondb.createStatement();
+			ResultSet rs = query.executeQuery("SELECT * FROM Serveis");
+			while(rs.next()) {
+				Producte p = new Producte();
+				
+				p.setId_servei(rs.getInt("id_servei"));
+				p.setNom(rs.getString("nom"));
+				p.setPreu(rs.getInt("preu"));
+				
+				productes.add(p);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return productes;
+
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public boolean logear(String usuari, String contrasenya) {
 		boolean resultado = false;
 		userLoged = new Usuari();

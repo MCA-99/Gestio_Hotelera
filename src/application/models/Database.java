@@ -12,6 +12,7 @@ import javax.xml.bind.DatatypeConverter;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.TextField;
 
 
 public class Database {
@@ -46,22 +47,40 @@ public class Database {
 		userLoged = null;
 	}
 	
-	public void getUsers() {
-		try {
-			Statement s = this.conexiondb.createStatement();
-			ResultSet rs = s.executeQuery("SELECT * FROM Usuaris");
-			while (rs.next())
-			{
-			    System.out.println (rs.getString("nom_usuari"));
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+	public ObservableList<Usuari> getUsuaris(String filtro){
+		ObservableList<Usuari> usuaris = FXCollections.observableArrayList();
+		
+		if(filtro != null) {
+			try {
+				Statement query = this.conexiondb.createStatement();
+				ResultSet rs = query.executeQuery("SELECT * FROM Usuaris WHERE (rol LIKE 'rep') AND (id_usuari LIKE '"+filtro+"' OR nom_usuari LIKE '%"+filtro+"%' OR nom LIKE '%"+filtro+"%' OR cognom1 LIKE '%"+filtro+"%' OR cognom2 LIKE '%"+filtro+"%' OR DNI LIKE '%"+filtro+"%' OR passaport LIKE '%"+filtro+"%' OR nacionalitat LIKE '%"+filtro+"%' OR telefon LIKE '%"+filtro+"%' OR email LIKE '%"+filtro+"%' OR activo LIKE '%"+filtro+"%')");
+				while(rs.next()) {
+					Usuari u = new Usuari();
+					u.setId_usuari(rs.getInt("id_usuari"));
+					u.setNom_usuari(rs.getString("nom_usuari"));
+					u.setContrasenya(rs.getString("contrasenya"));
+					u.setNom(rs.getString("nom"));
+					u.setCognom1(rs.getString("cognom1"));
+					u.setCognom2(rs.getString("cognom2"));
+					u.setDNI(rs.getString("DNI"));
+					u.setPassaport(rs.getString("passaport"));
+					u.setNacionalitat(rs.getString("nacionalitat"));
+					u.setTelefon(rs.getInt("telefon"));
+					u.setEmail(rs.getString("email"));
+					u.setActivo(rs.getBoolean("activo"));
+					
+					usuaris.add(u);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}	
 		}
+		
+		return usuaris;
 		
 	}
 	
-	public ObservableList<Usuari> getUsuris(){
+	public ObservableList<Usuari> getUsuaris(){
 		ObservableList<Usuari> usuaris = FXCollections.observableArrayList();
 		
 		try {
@@ -132,6 +151,7 @@ public class Database {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 	}
 	
 	public String getMD5(String contrasenya) {
@@ -150,6 +170,22 @@ public class Database {
 		}
 		
 		return resultado;
+	}
+	
+	public boolean comprovarExistencia(String camp, String nomcamp, String nomTabla) {
+		 boolean resultat = false;
+		 ResultSet rs = null;
+		try {
+			Statement s = this.conexiondb.createStatement();
+			rs = s.executeQuery("SELECT * FROM "+nomTabla+" WHERE "+nomcamp+" LIKE '"+camp+"'");
+			if(rs.next() == true) {
+				resultat = true;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return resultat;
 	}
 	
 }

@@ -2,10 +2,14 @@ package application.controllers;
 
 import application.models.Database;
 import application.models.Usuari;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 
 public class GestioRecepcionistaController {
 
@@ -45,6 +49,31 @@ public class GestioRecepcionistaController {
     @FXML
     private TableColumn<Usuari, Boolean> activo_column;
     
+    @FXML
+    private TextField filtroRecepcionista;
+
+    @FXML
+    private Button editarRecepcionista_btn;
+
+    @FXML
+    private Button eliminarRecepcionista_btn;
+    
+    @FXML
+    void editarRecepcionista(ActionEvent event) {
+    	System.out.println("Editando...");
+    }
+    
+    @FXML
+    void eliminarRecepcionista(ActionEvent event) {
+    	System.out.println("Eliminando...");
+    }
+
+    @FXML
+    void buscarRecepcionista(KeyEvent event) {
+    	tablaRecepcionista.setItems(db.getUsuaris(filtroRecepcionista.getText()));
+    	
+    }
+    
     private Database db = Database.getDatabase();
     
     @FXML
@@ -61,7 +90,7 @@ public class GestioRecepcionistaController {
     	email_column.setCellValueFactory(new PropertyValueFactory<Usuari, String>("email"));
     	activo_column.setCellValueFactory(new PropertyValueFactory<Usuari, Boolean>("activo"));
     	
-    	tablaRecepcionista.setItems(db.getUsuris());
+    	tablaRecepcionista.setItems(db.getUsuaris());
     }
 
 }

@@ -14,6 +14,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
@@ -63,8 +65,7 @@ public class LoginController {
     }
     
     
-    @FXML
-    void login(ActionEvent event) {
+    void _login() {
     	String user = usuari.getText();
     	String pass = db.getMD5(contrasenya.getText());
     	
@@ -87,6 +88,18 @@ public class LoginController {
     	}
     	else {
     		loginError.setText("Inici de sesió incorrecte");
+    	}
+    }
+    
+    @FXML
+    void login(ActionEvent event) {
+    	_login();
+    }
+    
+    @FXML
+    void loginOnEnter(KeyEvent event) {
+    	if(event.getCode().compareTo(KeyCode.ENTER) == 0) {
+    		_login();
     	}
     }
    

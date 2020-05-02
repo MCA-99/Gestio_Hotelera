@@ -10,6 +10,9 @@ import java.sql.Statement;
 
 import javax.xml.bind.DatatypeConverter;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 
 public class Database {
 	/*ATRIBUTOS*/
@@ -58,6 +61,36 @@ public class Database {
 		
 	}
 	
+	public ObservableList<Usuari> getUsuris(){
+		ObservableList<Usuari> usuaris = FXCollections.observableArrayList();
+		
+		try {
+			Statement query = this.conexiondb.createStatement();
+			ResultSet rs = query.executeQuery("SELECT * FROM Usuaris WHERE rol LIKE 'rep'");
+			while(rs.next()) {
+				Usuari u = new Usuari();
+				u.setId_usuari(rs.getInt("id_usuari"));
+				u.setNom_usuari(rs.getString("nom_usuari"));
+				u.setContrasenya(rs.getString("contrasenya"));
+				u.setNom(rs.getString("nom"));
+				u.setCognom1(rs.getString("cognom1"));
+				u.setCognom2(rs.getString("cognom2"));
+				u.setDNI(rs.getString("DNI"));
+				u.setPassaport(rs.getString("passaport"));
+				u.setNacionalitat(rs.getString("nacionalitat"));
+				u.setTelefon(rs.getInt("telefon"));
+				u.setEmail(rs.getString("email"));
+				u.setActivo(rs.getBoolean("activo"));
+				
+				usuaris.add(u);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return usuaris;
+
+	}
 	
 	
 	public boolean logear(String usuari, String contrasenya) {

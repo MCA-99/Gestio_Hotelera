@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.GestioRecepcionistaController">
+   <children>
+      <BorderPane prefHeight="615.0" prefWidth="1013.0">
+         <center>
+            <TableView fx:id="tablaRecepcionista" prefHeight="617.0" prefWidth="1013.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="id_column" prefWidth="42.0" text="id" />
+                <TableColumn fx:id="nom_usuari_column" prefWidth="124.0" text="nom_usuari" />
+                  <TableColumn fx:id="nom_column" prefWidth="87.0" text="nom" />
+                  <TableColumn fx:id="cognom_column" prefWidth="74.0" text="cognom" />
+                  <TableColumn fx:id="segon_cognom_column" prefWidth="102.0" text="segon cognom" />
+                  <TableColumn fx:id="dni_column" prefWidth="89.0" text="DNI" />
+                  <TableColumn fx:id="passaport_column" prefWidth="90.0" text="passaport" />
+                  <TableColumn fx:id="nacionalitat_column" prefWidth="98.0" text="nacionalitat" />
+                  <TableColumn fx:id="telefon_column" prefWidth="112.0" text="telefon" />
+                  <TableColumn fx:id="email_column" prefWidth="138.0" text="email" />
+                  <TableColumn fx:id="activo_column" minWidth="0.0" prefWidth="56.0" text="activo" />
+              </columns>
+            </TableView>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

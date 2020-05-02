@@ -8,24 +8,32 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class Dashboard_AdminController {
 	private Database db = Database.getDatabase();
-    @FXML
-    private Button gestio_habitacions;
+	@FXML
+    private Button gestio_habitacions_btn;
 
     @FXML
-    private Button gestio_productes;
+    private Button gestio_productes_btn;
 
     @FXML
-    private Button gestio_pagaments;
+    private Button gestio_pagaments_btn;
 
     @FXML
-    private Button consulta_informes;
+    private Button consulta_informes_btn;
 
     @FXML
     private Button logout;
+
+    @FXML
+    private Button recepcionista_btn;
+    
+    @FXML
+    private BorderPane subScene;
 
     @FXML
     void consulta_informes(ActionEvent event) {
@@ -45,6 +53,18 @@ public class Dashboard_AdminController {
     @FXML
     void gestio_productes(ActionEvent event) {
 
+    }
+    
+
+    @FXML
+    void recepcionista(ActionEvent event) {
+    	subScene.setCenter(null);
+	    try {
+	        AnchorPane root = (AnchorPane)FXMLLoader.load(Main.class.getResource("/application/views/GestioRecepcionista.fxml"));
+	        subScene.setCenter(root);
+	    } catch(Exception e) {
+	        e.printStackTrace();
+	    }
     }
 
     @FXML

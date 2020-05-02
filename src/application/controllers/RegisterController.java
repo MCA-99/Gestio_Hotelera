@@ -23,6 +23,7 @@ import javafx.scene.control.TextField;
 public class RegisterController {
 	
 	private Database db = Database.getDatabase();
+	
 	@FXML MediaView bgVideo;
     String path = new File("src/bg/bg.mp4").getAbsolutePath();
 	Media me = new Media(new File(path).toURI().toString());
@@ -109,5 +110,6 @@ public class RegisterController {
     		error.setText("Omple tots els camps.");
     	}
     }
+    
 }
 

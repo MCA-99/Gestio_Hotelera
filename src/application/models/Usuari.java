@@ -22,6 +22,7 @@ public class Usuari {
 	private String timestamp;
 	
 	private Database db;
+	private Boolean activo;
 
 	/*CONSTRUCTORES*/
 	
@@ -158,6 +159,14 @@ public class Usuari {
 	
 	public void insertCliente() {
 		
+	}
+	
+	public Boolean getActivo() {
+		return this.activo;	
+	}
+	
+	public void setActivo(Boolean activo) {
+		this.activo = activo;	
 	}
 	
 }

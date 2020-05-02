@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: mysql
--- Tiempo de generación: 02-05-2020 a las 18:31:35
+-- Tiempo de generación: 02-05-2020 a las 18:43:55
 -- Versión del servidor: 10.4.12-MariaDB-1:10.4.12+maria~bionic
 -- Versión de PHP: 7.4.5
 
@@ -140,6 +140,13 @@ INSERT INTO `Usuaris` (`id_usuari`, `nom_usuari`, `contrasenya`, `nom`, `cognom1
 --
 
 --
+-- Indices de la tabla `Contrata`
+--
+ALTER TABLE `Contrata`
+  ADD KEY `id_client` (`id_client`),
+  ADD KEY `id_servei` (`id_servei`);
+
+--
 -- Indices de la tabla `Habitacions`
 --
 ALTER TABLE `Habitacions`
@@ -149,7 +156,10 @@ ALTER TABLE `Habitacions`
 -- Indices de la tabla `Reserva`
 --
 ALTER TABLE `Reserva`
-  ADD PRIMARY KEY (`id_reserva`);
+  ADD PRIMARY KEY (`id_reserva`),
+  ADD KEY `id_client` (`id_client`),
+  ADD KEY `id_treballador` (`id_treballador`),
+  ADD KEY `id_habitacio` (`id_habitacio`);
 
 --
 -- Indices de la tabla `Serveis`
@@ -172,6 +182,25 @@ ALTER TABLE `Usuaris`
 --
 ALTER TABLE `Usuaris`
   MODIFY `id_usuari` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `Contrata`
+--
+ALTER TABLE `Contrata`
+  ADD CONSTRAINT `Contrata_ibfk_1` FOREIGN KEY (`id_client`) REFERENCES `Usuaris` (`id_usuari`),
+  ADD CONSTRAINT `Contrata_ibfk_2` FOREIGN KEY (`id_servei`) REFERENCES `Serveis` (`id_servei`);
+
+--
+-- Filtros para la tabla `Reserva`
+--
+ALTER TABLE `Reserva`
+  ADD CONSTRAINT `Reserva_ibfk_1` FOREIGN KEY (`id_client`) REFERENCES `Usuaris` (`id_usuari`),
+  ADD CONSTRAINT `Reserva_ibfk_2` FOREIGN KEY (`id_treballador`) REFERENCES `Usuaris` (`id_usuari`),
+  ADD CONSTRAINT `Reserva_ibfk_3` FOREIGN KEY (`id_habitacio`) REFERENCES `Habitacions` (`id_habitacio`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

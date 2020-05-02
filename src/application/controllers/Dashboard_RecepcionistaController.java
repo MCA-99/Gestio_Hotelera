@@ -14,7 +14,6 @@ public class Dashboard_RecepcionistaController {
 
 
 	private Database db = Database.getDatabase();
-	
 	@FXML
     private Button gestio_clients_btn;
 

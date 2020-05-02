@@ -3,12 +3,20 @@ package application.controllers;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 
+import application.models.Usuari;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class EditRepController {
+	
+	private Usuari userEdit;
 
-    @FXML
+	public EditRepController() {
+		this.userEdit = GestioRecepcionistaController.userEdit;
+    }
+   
+	@FXML
     private JFXTextField nom;
 
     @FXML
@@ -37,14 +45,15 @@ public class EditRepController {
 
     @FXML
     private JFXButton guardar_btn;
-
-    public EditRepController() {
-    	
-    }
     
     @FXML
     void guardar(ActionEvent event) {
-
+    	nom.setText(userEdit.getNom());
+    }
+    
+    @FXML
+    void initialize() {
+    	nom.setText(userEdit.getNom());
     }
 
 }

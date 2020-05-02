@@ -5,6 +5,7 @@ import java.io.IOException;
 import application.models.Database;
 import application.models.Main;
 import application.models.Usuari;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -66,19 +68,27 @@ public class GestioRecepcionistaController {
     @FXML
     private Button eliminarRecepcionista_btn;
     
+    public static Usuari userEdit;
+    
     @FXML
     void editarRecepcionista(ActionEvent event) {
     	
-    	try {
-    		Stage stage = new Stage();
-    		Parent root = FXMLLoader.load(getClass().getResource("/application/views/EditRep.fxml"));
-    		Scene scene = new Scene(root);
-    	    stage.setTitle("Recepcionista");
-    	    stage.setScene(scene);
-    	    stage.show();
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
+    	if (tablaRecepcionista.getSelectionModel().getSelectedItem() != null) {
+    		userEdit = tablaRecepcionista.getSelectionModel().getSelectedItem();
+    		try {
+        		Stage stage = new Stage();
+        		Parent root = FXMLLoader.load(getClass().getResource("/application/views/EditRep.fxml"));
+        		Scene scene = new Scene(root);
+        	    stage.setTitle("Recepcionista");
+        	    stage.setScene(scene);
+        	    stage.show();
+    		} catch(Exception e) {
+    			e.printStackTrace();
+    		}
+    	}else {
+    		System.out.println("Selecciona un registre.");
+    	}
+    	
     }
     
     @FXML
@@ -109,6 +119,8 @@ public class GestioRecepcionistaController {
     	activo_column.setCellValueFactory(new PropertyValueFactory<Usuari, Boolean>("activo"));
     	
     	tablaRecepcionista.setItems(db.getUsuaris());
+    	
+    	
     }
 
 }

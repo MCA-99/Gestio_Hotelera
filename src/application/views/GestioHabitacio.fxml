@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.GestioHabitacioController">
+   <children>
+      <BorderPane prefHeight="615.0" prefWidth="1013.0">
+         <center>
+            <TableView fx:id="tablaHabitacio" prefHeight="331.0" prefWidth="1013.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="id_column" prefWidth="76.0" text="id" />
+                <TableColumn fx:id="planta_column" prefWidth="99.0" text="planta" />
+                  <TableColumn fx:id="preu_column" prefWidth="124.0" text="preu" />
+                  <TableColumn fx:id="estat_column" prefWidth="117.0" text="estat" />
+                  <TableColumn fx:id="tipus_column" prefWidth="123.0" text="tipus" />
+                  <TableColumn fx:id="descripcio_column" prefWidth="263.0" text="descripció" />
+                  <TableColumn fx:id="caracteristiques_column" minWidth="0.0" prefWidth="210.0" text="característiques" />
+              </columns>
+            </TableView>
+         </center>
+         <top>
+            <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <items>
+                  <TextField fx:id="filtroHabitacio" onKeyReleased="#buscarHabitacio" prefHeight="25.0" prefWidth="242.0" promptText="Buscar" />
+                  <Button fx:id="editarHabitacio_btn" mnemonicParsing="false" onAction="#editarHabitacio" prefHeight="25.0" prefWidth="114.0" text="Editar" />
+                  <Button fx:id="eliminarHabitacio_btn" mnemonicParsing="false" onAction="#eliminarHabitacio" prefHeight="25.0" prefWidth="111.0" text="Eliminar" />
+                  <Button fx:id="afegirHabitacio_btn" mnemonicParsing="false" onAction="#afegirHabitacio" prefHeight="25.0" prefWidth="111.0" text="Afegir Habitació" />
+              </items>
+            </ToolBar>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

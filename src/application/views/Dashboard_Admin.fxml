@@ -13,7 +13,7 @@
          <top>
 		      <Pane prefHeight="675.0" prefWidth="1230.0" BorderPane.alignment="CENTER">
 		         <children>
-		            <Button fx:id="gestio_habitacions_btn" layoutX="28.0" layoutY="164.0" mnemonicParsing="false" onAction="#gestio_habitacions" prefHeight="68.0" prefWidth="165.0" text="Gestió de d' Habitacións">
+		            <Button fx:id="habitacions_btn" layoutX="28.0" layoutY="164.0" mnemonicParsing="false" onAction="#habitacions" prefHeight="68.0" prefWidth="165.0" text="Gestió de d' Habitacións">
 		               <font>
 		                  <Font size="13.0" />
 		               </font>

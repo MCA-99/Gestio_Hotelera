@@ -29,6 +29,8 @@ public class Usuari {
 	public Usuari() {
 		this.db = Database.getDatabase();
 	}
+	
+	/*METODOS*/
 
 	public int getId_usuari() {
 		return id_usuari;
@@ -149,8 +151,6 @@ public class Usuari {
 	public void setTimestamp(String timestamp) {
 		this.timestamp = timestamp;
 	}
-	
-	/*METODOS*/
 	
 	public void insertRecepcionista(String nom_usuari, String contrasenya, String nom, String cognom1, String cognom2, String DNI, String passaport, String nacionalitat, String telefon, String email) {
 		db.insertRecepcionista(nom_usuari, contrasenya, nom, cognom1, cognom2, DNI, passaport, nacionalitat, telefon, email);

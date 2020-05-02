@@ -47,6 +47,11 @@ public class Database {
 		userLoged = null;
 	}
 	
+	
+	
+	
+	
+	
 	public ObservableList<Usuari> getUsuaris(String filtro){
 		ObservableList<Usuari> usuaris = FXCollections.observableArrayList();
 		
@@ -110,6 +115,72 @@ public class Database {
 		return usuaris;
 
 	}
+	
+
+	
+	
+	
+	
+	public ObservableList<Habitacio> getHabitacions(String filtro){
+		ObservableList<Habitacio> habitacions = FXCollections.observableArrayList();
+		
+		if(filtro != null) {
+			try {
+				Statement query = this.conexiondb.createStatement();
+				ResultSet rs = query.executeQuery("SELECT * FROM Habitacions WHERE id_habitacio LIKE '"+filtro+"' OR planta LIKE '%"+filtro+"%' OR preu LIKE '%"+filtro+"%' OR estat LIKE '%"+filtro+"%' OR tipus LIKE '%"+filtro+"%' OR descripcio LIKE '%"+filtro+"%' OR caracteristiques LIKE '%"+filtro+"%'");
+				while(rs.next()) {
+					Habitacio h = new Habitacio();
+					
+					h.setId_habitacio(rs.getInt("id_habitacio"));
+					h.setPlanta(rs.getInt("planta"));
+					h.setPreu(rs.getInt("preu"));
+					h.setEstat(rs.getString("estat"));
+					h.setTipus(rs.getString("tipus"));
+					h.setDescripcio(rs.getString("descripcio"));
+					h.setCaracteristiques(rs.getString("caracteristiques"));
+					
+					habitacions.add(h);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}	
+		}
+		
+		return habitacions;
+		
+	}
+	
+	public ObservableList<Habitacio> getHabitacions(){
+		ObservableList<Habitacio> habitacions = FXCollections.observableArrayList();
+		
+		try {
+			Statement query = this.conexiondb.createStatement();
+			ResultSet rs = query.executeQuery("SELECT * FROM Habitacions");
+			while(rs.next()) {
+				Habitacio h = new Habitacio();
+				
+				h.setId_habitacio(rs.getInt("id_habitacio"));
+				h.setPlanta(rs.getInt("planta"));
+				h.setPreu(rs.getInt("preu"));
+				h.setEstat(rs.getString("estat"));
+				h.setTipus(rs.getString("tipus"));
+				h.setDescripcio(rs.getString("descripcio"));
+				h.setCaracteristiques(rs.getString("caracteristiques"));
+				
+				habitacions.add(h);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return habitacions;
+
+	}
+	
+	
+	
+	
+	
 	
 	
 	public boolean logear(String usuari, String contrasenya) {

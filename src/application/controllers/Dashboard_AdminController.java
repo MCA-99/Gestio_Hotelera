@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 public class Dashboard_AdminController {
 	private Database db = Database.getDatabase();
 	@FXML
-    private Button gestio_habitacions_btn;
+    private Button habitacions_btn;
 
     @FXML
     private Button gestio_productes_btn;
@@ -41,8 +41,14 @@ public class Dashboard_AdminController {
     }
 
     @FXML
-    void gestio_habitacions(ActionEvent event) {
-
+    void habitacions(ActionEvent event) {
+    	subScene.setCenter(null);
+	    try {
+	        AnchorPane root = (AnchorPane)FXMLLoader.load(Main.class.getResource("/application/views/GestioHabitacio.fxml"));
+	        subScene.setCenter(root);
+	    } catch(Exception e) {
+	        e.printStackTrace();
+	    }
     }
 
     @FXML
@@ -66,6 +72,8 @@ public class Dashboard_AdminController {
 	        e.printStackTrace();
 	    }
     }
+    
+    
 
     @FXML
     void logout(ActionEvent event) {

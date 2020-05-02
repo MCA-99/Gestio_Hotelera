@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.GestioHabitacioController">
+   <children>
+      <BorderPane prefHeight="615.0" prefWidth="1013.0">
+         <center>
+            <TableView fx:id="tablaProducte" prefHeight="331.0" prefWidth="1013.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="id_servei" prefWidth="288.0" text="id" />
+                <TableColumn fx:id="nom_column" minWidth="0.0" prefWidth="402.0" text="nom" />
+                  <TableColumn fx:id="preu_column" prefWidth="322.0" text="preu" />
+              </columns>
+            </TableView>
+         </center>
+         <top>
+            <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <items>
+                  <TextField fx:id="filtroProductes" onKeyReleased="#buscarProductes" prefHeight="25.0" prefWidth="242.0" promptText="Buscar" />
+                  <Button fx:id="editarProducte_btn" mnemonicParsing="false" onAction="#editarProducte" prefHeight="25.0" prefWidth="114.0" text="Editar" />
+                  <Button fx:id="eliminarProducte_btn" mnemonicParsing="false" onAction="#eliminarProducte" prefHeight="25.0" prefWidth="111.0" text="Eliminar" />
+                  <Button fx:id="afegirProducte_btn" mnemonicParsing="false" onAction="#afegirProducte" prefHeight="25.0" prefWidth="111.0" text="Afegir Producte" />
+              </items>
+            </ToolBar>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

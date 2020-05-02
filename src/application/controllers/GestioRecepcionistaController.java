@@ -1,15 +1,23 @@
 package application.controllers;
 
+import java.io.IOException;
+
 import application.models.Database;
+import application.models.Main;
 import application.models.Usuari;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class GestioRecepcionistaController {
 
@@ -60,7 +68,17 @@ public class GestioRecepcionistaController {
     
     @FXML
     void editarRecepcionista(ActionEvent event) {
-    	System.out.println("Editando...");
+    	
+    	try {
+    		Stage stage = new Stage();
+    		Parent root = FXMLLoader.load(getClass().getResource("/application/views/EditRep.fxml"));
+    		Scene scene = new Scene(root);
+    	    stage.setTitle("Recepcionista");
+    	    stage.setScene(scene);
+    	    stage.show();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
     }
     
     @FXML

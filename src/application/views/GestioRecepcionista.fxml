@@ -24,7 +24,7 @@
                   <TableColumn fx:id="nacionalitat_column" prefWidth="98.0" text="nacionalitat" />
                   <TableColumn fx:id="telefon_column" prefWidth="112.0" text="telefon" />
                   <TableColumn fx:id="email_column" prefWidth="138.0" text="email" />
-                  <TableColumn fx:id="activo_column" minWidth="0.0" prefWidth="52.0" text="activo" />
+                  <TableColumn fx:id="activo_column" minWidth="0.0" prefWidth="52.0" text="actiu" />
               </columns>
             </TableView>
          </center>

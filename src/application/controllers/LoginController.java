@@ -71,24 +71,34 @@ public class LoginController {
     	
     	if(db.logear(user, pass)) {
     		userLoged = db.getUserLoged();
-    		switch(userLoged.getRol()) {
-	    		case "admin":
-	    			System.out.println("Usuari logejat amb exit.");
-	        		System.out.println("nom usuari: "+userLoged.getNom_usuari() + " contrasenya: " + userLoged.getContrasenya());
-	        		Main.changeScene("/application/views/Dashboard_Admin.fxml");
-	    			break;
-	    		case "rep":
-	    			System.out.println("Usuari logejat amb exit.");
-	        		System.out.println("nom usuari: "+userLoged.getNom_usuari() + " contrasenya: " + userLoged.getContrasenya());
-	        		Main.changeScene("/application/views/Dashboard_Recepcionista.fxml");
-	    			break;
-	    		default:
-	    			break;
+    		System.out.println(userLoged.getActivo());
+    		if(userLoged.getActivo() != false) {
+    			switch(userLoged.getRol()) {
+		    		case "admin":
+		    			System.out.println("Usuari logejat amb exit.");
+		        		System.out.println("nom usuari: "+userLoged.getNom_usuari() + " contrasenya: " + userLoged.getContrasenya());
+		        		Main.changeScene("/application/views/Dashboard_Admin.fxml");
+		    			break;
+		    		case "rep":
+		    			System.out.println("Usuari logejat amb exit.");
+		        		System.out.println("nom usuari: "+userLoged.getNom_usuari() + " contrasenya: " + userLoged.getContrasenya());
+		        		Main.changeScene("/application/views/Dashboard_Recepcionista.fxml");
+		    			break;
+		    		default:
+		    			break;
+    			}
+    		}
+    		else {
+    			userLoged = null;
+    			loginError.setText("");
+    			loginError.setText("El usuari es troba desactivat.");
     		}
     	}
     	else {
-    		loginError.setText("Inici de sesió incorrecte");
-    	}
+    		loginError.setText("");
+			loginError.setText("Inici de sesió incorrecte.");
+		}
+    		
     }
     
     @FXML

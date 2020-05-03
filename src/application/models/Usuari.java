@@ -152,9 +152,8 @@ public class Usuari {
 		this.timestamp = timestamp;
 	}
 	
-	public void insertRecepcionista(String nom_usuari, String contrasenya, String nom, String cognom1, String cognom2, String DNI, String passaport, String nacionalitat, String telefon, String email) {
-		db.insertRecepcionista(nom_usuari, contrasenya, nom, cognom1, cognom2, DNI, passaport, nacionalitat, telefon, email);
-		
+	public void insert(String nom_usuari, String contrasenya, String nom, String cognom1, String cognom2, String DNI, String passaport, String nacionalitat, String telefon, String email) {
+		db.insertUsuari(nom_usuari, contrasenya, nom, cognom1, cognom2, DNI, passaport, nacionalitat, telefon, email);
 	}
 	
 	public void insertCliente() {

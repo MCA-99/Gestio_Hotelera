@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="670.0" prefWidth="380.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="application.controllers.EditRepController">
+<AnchorPane prefHeight="703.0" prefWidth="380.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.EditRepController">
    <children>
       <JFXTextField fx:id="nom" layoutX="34.0" layoutY="172.0" prefHeight="25.0" prefWidth="309.0" />
       <JFXTextField fx:id="cognom" layoutX="34.0" layoutY="225.0" prefHeight="25.0" prefWidth="309.0" />
@@ -32,6 +32,7 @@
       <JFXTextField fx:id="telefon" layoutX="34.0" layoutY="499.0" prefHeight="25.0" prefWidth="309.0" />
       <Text layoutX="34.0" layoutY="549.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="92.08984375" />
       <JFXTextField fx:id="email" layoutX="34.0" layoutY="553.0" prefHeight="25.0" prefWidth="309.0" />
-      <JFXButton fx:id="guardar_btn" layoutX="74.0" layoutY="613.0" onAction="#guardar" prefHeight="25.0" prefWidth="233.0" style="-fx-font-weight: bold; -fx-border-color: black;" text="GUARDAR" />
+      <JFXButton fx:id="guardar_btn" layoutX="72.0" layoutY="649.0" onAction="#guardar" prefHeight="25.0" prefWidth="233.0" style="-fx-font-weight: bold; -fx-border-color: black;" text="GUARDAR" />
+      <JFXCheckBox fx:id="actiu" layoutX="36.0" layoutY="604.0" prefHeight="18.0" prefWidth="158.0" text="Actiu" />
    </children>
 </AnchorPane>

@@ -1,8 +1,10 @@
 package application.controllers;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXTextField;
 
+import application.models.Database;
 import application.models.Usuari;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,7 +13,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 public class EditRepController {
 	
 	private Usuari userEdit;
-
+	private Database db = Database.getDatabase();
+	
 	public EditRepController() {
 		this.userEdit = GestioRecepcionistaController.userEdit;
     }
@@ -42,18 +45,31 @@ public class EditRepController {
 
     @FXML
     private JFXTextField email;
+    
+    @FXML
+    private JFXCheckBox actiu;
 
     @FXML
     private JFXButton guardar_btn;
     
     @FXML
     void guardar(ActionEvent event) {
-    	nom.setText(userEdit.getNom());
+    	db.updateUsuari(userEdit.getId_usuari(), nom_usuari.getText(), nom.getText(), cognom.getText(), segon_cognom.getText(), dni.getText(), passaport.getText(), nacionalitat.getText(), telefon.getText(), email.getText(), actiu.isSelected());
+    	
     }
     
     @FXML
     void initialize() {
+    	nom_usuari.setText(userEdit.getNom_usuari());
     	nom.setText(userEdit.getNom());
+    	cognom.setText(userEdit.getCognom1());
+    	segon_cognom.setText(userEdit.getCognom2());
+    	dni.setText(userEdit.getDNI());
+    	passaport.setText(userEdit.getPassaport());
+    	nacionalitat.setText(userEdit.getNacionalitat());
+    	telefon.setText(Integer.toString(userEdit.getTelefon()));
+    	email.setText(userEdit.getEmail());
+    	actiu.setSelected(userEdit.getActivo());
     }
 
 }

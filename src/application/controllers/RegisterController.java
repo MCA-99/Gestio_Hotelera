@@ -102,7 +102,7 @@ public class RegisterController {
     	Usuari user = new Usuari();
     	if(!nom_usuari.getText().isEmpty() && !contrasenya.getText().isEmpty() && !nom.getText().isEmpty() && !cognom1.getText().isEmpty() && !cognom2.getText().isEmpty() && !dni.getText().isEmpty() && !passaport.getText().isEmpty() && !nacionalitat.getText().isEmpty() && !telefon.getText().isEmpty() && !email.getText().isEmpty()) {
     		if(db.comprovarExistencia(nom_usuari.getText(), "nom_usuari", "Usuaris") == false && db.comprovarExistencia(email.getText(), "email", "Usuaris") == false ) {
-    			user.insertRecepcionista(nom_usuari.getText(), db.getMD5(contrasenya.getText()), nom.getText(), cognom1.getText(), cognom2.getText(), dni.getText(), passaport.getText(), nacionalitat.getText(), telefon.getText(), email.getText());
+    			user.insert(nom_usuari.getText(), db.getMD5(contrasenya.getText()), nom.getText(), cognom1.getText(), cognom2.getText(), dni.getText(), passaport.getText(), nacionalitat.getText(), telefon.getText(), email.getText());
     			error.setText("");
     			success.setText("Usuari Registrat");
     		}

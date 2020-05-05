@@ -15,6 +15,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 public class EditRepController {
 	
@@ -62,7 +63,7 @@ public class EditRepController {
     void guardar(ActionEvent event) {
     	db.updateUsuari(userEdit.getId_usuari(), nom_usuari.getText(), nom.getText(), cognom.getText(), segon_cognom.getText(), dni.getText(), passaport.getText(), nacionalitat.getText(), telefon.getText(), email.getText(), actiu.isSelected());
     	Stage stage = (Stage) guardar_btn.getScene().getWindow();
-    	stage.close();
+    	stage.fireEvent(new WindowEvent(stage, WindowEvent.WINDOW_CLOSE_REQUEST));
     }
     
     @FXML

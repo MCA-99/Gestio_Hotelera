@@ -1,14 +1,20 @@
 package application.controllers;
 
+import java.io.IOException;
+
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXTextField;
+import com.mysql.cj.x.protobuf.MysqlxNotice.Frame;
 
 import application.models.Database;
 import application.models.Usuari;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class EditRepController {
 	
@@ -55,7 +61,8 @@ public class EditRepController {
     @FXML
     void guardar(ActionEvent event) {
     	db.updateUsuari(userEdit.getId_usuari(), nom_usuari.getText(), nom.getText(), cognom.getText(), segon_cognom.getText(), dni.getText(), passaport.getText(), nacionalitat.getText(), telefon.getText(), email.getText(), actiu.isSelected());
-    	
+    	Stage stage = (Stage) guardar_btn.getScene().getWindow();
+    	stage.close();
     }
     
     @FXML

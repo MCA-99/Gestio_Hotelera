@@ -23,6 +23,8 @@ import javafx.stage.Stage;
 
 public class GestioRecepcionistaController {
 
+    private Database db = Database.getDatabase();
+	
 	@FXML
     private TableView<Usuari> tablaRecepcionista;
 	
@@ -102,15 +104,13 @@ public class GestioRecepcionistaController {
     	
     }
     
-    private Database db = Database.getDatabase();
-    
     @FXML
 	void initialize() {
     	id_column.setCellValueFactory(new PropertyValueFactory<Usuari, Integer>("id_usuari"));
     	nom_usuari_column.setCellValueFactory(new PropertyValueFactory<Usuari, String>("nom_usuari"));
     	nom_column.setCellValueFactory(new PropertyValueFactory<Usuari, String>("nom"));
-    	cognom_column.setCellValueFactory(new PropertyValueFactory<Usuari, String>("cognom"));
-    	segon_cognom_column.setCellValueFactory(new PropertyValueFactory<Usuari, String>("segon_cognom"));
+    	cognom_column.setCellValueFactory(new PropertyValueFactory<Usuari, String>("cognom1"));
+    	segon_cognom_column.setCellValueFactory(new PropertyValueFactory<Usuari, String>("cognom2"));
     	dni_column.setCellValueFactory(new PropertyValueFactory<Usuari, String>("DNI"));
     	passaport_column.setCellValueFactory(new PropertyValueFactory<Usuari, String>("passaport"));
     	nacionalitat_column.setCellValueFactory(new PropertyValueFactory<Usuari, String>("nacionalitat"));
@@ -121,6 +121,11 @@ public class GestioRecepcionistaController {
     	tablaRecepcionista.setItems(db.getUsuaris());
     	
     	
+    }
+    
+    void refreshTable(){
+    	tablaRecepcionista.refresh();
+    	tablaRecepcionista.setItems(db.getUsuaris());
     }
 
 }

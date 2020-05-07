@@ -23,11 +23,6 @@ import javafx.scene.control.TextField;
 public class RegisterController {
 	
 	private Database db = Database.getDatabase();
-	
-	@FXML MediaView bgVideo;
-    String path = new File("src/bg/bg.mp4").getAbsolutePath();
-	Media me = new Media(new File(path).toURI().toString());
-	MediaPlayer md = new MediaPlayer(me);
 
     @FXML
     private TextField nom_usuari;
@@ -71,21 +66,6 @@ public class RegisterController {
     @FXML
     void register(ActionEvent event) {
 
-    }
-    
-    @FXML
-    void initialize() {
-    	md.setOnEndOfMedia(new Runnable() {
-			@Override
-			public void run() {
-				md.seek(Duration.ZERO);
-				md.play();
-			}
-		});
-    	
-    	bgVideo.setMediaPlayer(md);
-    	md.setAutoPlay(true);
-    	md.setVolume(0);
     }
     
     @FXML

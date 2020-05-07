@@ -30,11 +30,6 @@ public class LoginController {
 	private Usuari userLoged = db.getUserLoged();
 	
 	public static Stage register;
-	
-	@FXML MediaView bgVideo;
-    String path = new File("src/bg/bg.mp4").getAbsolutePath();
-	Media me = new Media(new File(path).toURI().toString());
-	MediaPlayer md = new MediaPlayer(me);
 
     @FXML
     private Label loginError;
@@ -50,23 +45,6 @@ public class LoginController {
 
     @FXML
     private JFXPasswordField contrasenya;
-    
-    @FXML
-    void initialize() {
-    	md.setOnEndOfMedia(new Runnable() {
-			
-			@Override
-			public void run() {
-				md.seek(Duration.ZERO);
-				md.play();
-			}
-		});
-    	
-    	bgVideo.setMediaPlayer(md);
-    	md.setAutoPlay(true);
-    	md.setVolume(0);
-    	
-    }
     
     
     void _login() {

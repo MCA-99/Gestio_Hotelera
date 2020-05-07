@@ -110,11 +110,8 @@ public class LoginController {
     	_login();
     }
     
-    @FXML
-    void loginOnEnter(KeyEvent event) {
-    	if(event.getCode().compareTo(KeyCode.ENTER) == 0) {
-    		_login();
-    	}
+    public void onEnter(ActionEvent ae){
+    	_login();
     }
    
     @FXML
@@ -125,6 +122,8 @@ public class LoginController {
 			e.printStackTrace();
 		}
     }
+    
+    
     
     
 }

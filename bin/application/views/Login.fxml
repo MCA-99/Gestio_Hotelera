@@ -54,8 +54,8 @@
                         <Font size="15.0" />
                      </font>
                   </JFXButton>
-                  <JFXTextField fx:id="usuari" focusColor="#e69e6c" layoutX="869.0" layoutY="278.0" prefHeight="25.0" prefWidth="325.0" unFocusColor="BLACK" />
-                  <JFXPasswordField fx:id="contrasenya" focusColor="#e69e6c" layoutX="865.0" layoutY="353.0" prefHeight="25.0" prefWidth="333.0" unFocusColor="BLACK" />
+                  <JFXTextField fx:id="usuari" focusColor="#e69e6c" layoutX="869.0" layoutY="278.0" onAction="#onEnter" prefHeight="25.0" prefWidth="325.0" unFocusColor="BLACK" />
+                  <JFXPasswordField fx:id="contrasenya" focusColor="#e69e6c" layoutX="865.0" layoutY="353.0" onAction="#onEnter" prefHeight="25.0" prefWidth="333.0" unFocusColor="BLACK" />
                   <Label layoutX="876.0" layoutY="166.0" prefHeight="17.0" prefWidth="319.0" style="-fx-alignment: center; -fx-font-weight: bold;" text="INICIAR SESSIÓ" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font size="28.0" />

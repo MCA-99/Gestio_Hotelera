@@ -2,6 +2,10 @@ package application.controllers;
 
 import java.io.File;
 import java.io.IOException;
+
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
 import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Text;
 import application.models.Database;
 import application.models.Main;
@@ -31,21 +35,21 @@ public class LoginController {
     String path = new File("src/bg/bg.mp4").getAbsolutePath();
 	Media me = new Media(new File(path).toURI().toString());
 	MediaPlayer md = new MediaPlayer(me);
-	
-	@FXML
-    private Button accedir;
-
-    @FXML
-    private Button registrarse;
-
-    @FXML
-    private TextField usuari;
-
-    @FXML
-    private PasswordField contrasenya;
 
     @FXML
     private Label loginError;
+
+    @FXML
+    private JFXButton accedir;
+
+    @FXML
+    private JFXButton registrarse;
+
+    @FXML
+    private JFXTextField usuari;
+
+    @FXML
+    private JFXPasswordField contrasenya;
     
     @FXML
     void initialize() {

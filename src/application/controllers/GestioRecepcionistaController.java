@@ -90,7 +90,7 @@ public class GestioRecepcionistaController {
         		stage.setScene(scene);
         		stage.show();
         		stage.setOnCloseRequest(e ->{
-        			refreshTable();
+        			tablaRecepcionista.setItems(db.getUsuaris());
         		}); 
     		} catch(Exception e) {
     			e.printStackTrace();
@@ -126,11 +126,6 @@ public class GestioRecepcionistaController {
     	email_column.setCellValueFactory(new PropertyValueFactory<Usuari, String>("email"));
     	activo_column.setCellValueFactory(new PropertyValueFactory<Usuari, Boolean>("activo"));
     	
-    	tablaRecepcionista.setItems(db.getUsuaris());
-    }
-    
-    void refreshTable(){
-    	tablaRecepcionista.refresh();
     	tablaRecepcionista.setItems(db.getUsuaris());
     }
    

@@ -1,1 +1,18 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+
+.btn{
+	-fx-font-size: 15px !important;
+}
+
+.btn:hover,
+.btn:active,
+.btn:visited{
+	-fx-font-size: 15px !important;
+}
+.jfx-text-field,
+.jfx-password-field{
+	-fx-text-fill: #fff;
+	-fx-padding: 10px 0;
+	-fx-font-size: 15px;
+}

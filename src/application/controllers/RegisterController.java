@@ -1,84 +1,61 @@
 package application.controllers;
 
-import java.io.File;
-
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextField;
 import application.models.Database;
 import application.models.Main;
 import application.models.Usuari;
-import javafx.scene.media.MediaView;
-import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.util.Duration;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 
 public class RegisterController {
-	
+
 	private Database db = Database.getDatabase();
+    @FXML
+    private JFXTextField nom_usuari;
 
     @FXML
-    private TextField nom_usuari;
+    private JFXTextField contrasenya;
 
     @FXML
-    private PasswordField contrasenya;
-    
-    @FXML
-    private TextField nom;
+    private JFXTextField nom;
 
     @FXML
-    private TextField cognom1;
+    private JFXTextField cognom1;
 
     @FXML
-    private TextField cognom2;
+    private JFXTextField cognom2;
 
     @FXML
-    private TextField dni;
+    private JFXTextField dni;
 
     @FXML
-    private TextField passaport;
+    private JFXTextField passaport;
 
     @FXML
-    private TextField nacionalitat;
+    private JFXTextField nacionalitat;
 
     @FXML
-    private TextField telefon;
+    private JFXTextField telefon;
 
     @FXML
-    private TextField email;
+    private JFXTextField email;
+
+    @FXML
+    private JFXButton tornar_btn;
+
+    @FXML
+    private JFXButton registrarse_btn;
     
     @FXML
     private Label error;
-    
+
     @FXML
     private Label success;
-    
-    @FXML
-    private Button logout;
 
     @FXML
-    void register(ActionEvent event) {
-
-    }
-    
-    @FXML
-    void logout(ActionEvent event) {
-    	try {
-    		Main.changeScene("/application/views/Login.fxml");
-    	} catch(Exception e) {
-			e.printStackTrace();
-		}
-    }
-    
-    @FXML
-    void register_button_recepcionista(ActionEvent event) {
+    void registrarse(ActionEvent event) {
     	Usuari user = new Usuari();
     	if(!nom_usuari.getText().isEmpty() && !contrasenya.getText().isEmpty() && !nom.getText().isEmpty() && !cognom1.getText().isEmpty() && !cognom2.getText().isEmpty() && !dni.getText().isEmpty() && !passaport.getText().isEmpty() && !nacionalitat.getText().isEmpty() && !telefon.getText().isEmpty() && !email.getText().isEmpty()) {
     		if(db.comprovarExistencia(nom_usuari.getText(), "nom_usuari", "Usuaris") == false && db.comprovarExistencia(email.getText(), "email", "Usuaris") == false ) {
@@ -96,6 +73,16 @@ public class RegisterController {
     		error.setText("Omple tots els camps.");
     	}
     }
-    
+
+    @FXML
+    void tornar(ActionEvent event) {
+    	try {
+    		Main.changeScene("/application/views/Login.fxml");
+    	} catch(Exception e) {
+			e.printStackTrace();
+		}
+    }
+
 }
+
 

@@ -1,112 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.GaussianBlur?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="1230.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.RegisterController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1245.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.RegisterController">
    <children>
-		      <Pane prefHeight="675.0" prefWidth="1230.0">
-		         <children>
-		            <Rectangle arcHeight="5.0" arcWidth="5.0" height="518.0" layoutX="74.0" layoutY="74.0" opacity="0.4" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="1111.0">
-		               <effect>
-		                  <GaussianBlur />
-		               </effect>
-		            </Rectangle>
-		            <Button fx:id="register_button_recepcionista" layoutX="945.0" layoutY="456.0" mnemonicParsing="false" onAction="#register_button_recepcionista" prefHeight="68.0" prefWidth="155.0" style="-fx-background-radius: 10px;" text="Registrar-se">
-		               <font>
-		                  <Font size="15.0" />
-		               </font>
-		               <cursor>
-		                  <Cursor fx:constant="HAND" />
-		               </cursor>
-		            </Button>
-		            <Label layoutX="117.0" layoutY="113.0" prefHeight="29.0" prefWidth="97.0" text="Nom d'Usuari" textFill="WHITE">
-		               <font>
-		                  <Font size="15.0" />
-		               </font>
-		            </Label>
-		            <Label layoutX="116.0" layoutY="184.0" prefHeight="29.0" prefWidth="97.0" text="Contrasenya" textFill="WHITE">
-		               <font>
-		                  <Font size="15.0" />
-		               </font>
-		            </Label>
-		            <TextField fx:id="nom_usuari" layoutX="117.0" layoutY="142.0" prefHeight="36.0" prefWidth="350.0" />
-		            <PasswordField fx:id="contrasenya" layoutX="117.0" layoutY="213.0" prefHeight="36.0" prefWidth="350.0" />
-		            <Label layoutX="117.0" layoutY="255.0" prefHeight="29.0" prefWidth="97.0" text="Nom" textFill="WHITE">
-		               <font>
-		                  <Font size="15.0" />
-		               </font>
-		            </Label>
-		            <TextField fx:id="nom" layoutX="117.0" layoutY="282.0" prefHeight="36.0" prefWidth="350.0" />
-		            <Label layoutX="116.0" layoutY="325.0" prefHeight="29.0" prefWidth="97.0" text="Cognom 1" textFill="WHITE">
-		               <font>
-		                  <Font size="15.0" />
-		               </font>
-		            </Label>
-		            <TextField fx:id="cognom1" layoutX="116.0" layoutY="352.0" prefHeight="36.0" prefWidth="350.0" />
-		            <Label layoutX="116.0" layoutY="395.0" prefHeight="29.0" prefWidth="97.0" text="Cognom 2" textFill="WHITE">
-		               <font>
-		                  <Font size="15.0" />
-		               </font>
-		            </Label>
-		            <TextField fx:id="cognom2" layoutX="116.0" layoutY="422.0" prefHeight="36.0" prefWidth="350.0" />
-		            <Label layoutX="116.0" layoutY="465.0" prefHeight="29.0" prefWidth="97.0" text="DNI" textFill="WHITE">
-		               <font>
-		                  <Font size="15.0" />
-		               </font>
-		            </Label>
-		            <TextField fx:id="dni" layoutX="116.0" layoutY="492.0" prefHeight="36.0" prefWidth="350.0" />
-		            <Label layoutX="492.0" layoutY="111.0" prefHeight="29.0" prefWidth="97.0" text="Passaport" textFill="WHITE">
-		               <font>
-		                  <Font size="15.0" />
-		               </font>
-		            </Label>
-		            <TextField fx:id="passaport" layoutX="492.0" layoutY="138.0" prefHeight="36.0" prefWidth="350.0" />
-		            <Label layoutX="492.0" layoutY="186.0" prefHeight="29.0" prefWidth="97.0" text="Nacionalitat" textFill="WHITE">
-		               <font>
-		                  <Font size="15.0" />
-		               </font>
-		            </Label>
-		            <TextField fx:id="nacionalitat" layoutX="492.0" layoutY="213.0" prefHeight="36.0" prefWidth="350.0" />
-		            <Label layoutX="492.0" layoutY="255.0" prefHeight="29.0" prefWidth="97.0" text="Telèfon" textFill="WHITE">
-		               <font>
-		                  <Font size="15.0" />
-		               </font>
-		            </Label>
-		            <TextField fx:id="telefon" layoutX="492.0" layoutY="282.0" prefHeight="36.0" prefWidth="350.0" />
-		            <Label layoutX="492.0" layoutY="323.0" prefHeight="29.0" prefWidth="97.0" text="E-Mail" textFill="WHITE">
-		               <font>
-		                  <Font size="15.0" />
-		               </font>
-		            </Label>
-		            <TextField fx:id="email" layoutX="492.0" layoutY="350.0" prefHeight="36.0" prefWidth="350.0" />
-		            <Label fx:id="error" alignment="CENTER" contentDisplay="CENTER" layoutX="857.0" layoutY="536.0" prefHeight="31.0" prefWidth="327.0" style="-fx-text-alignment: center; -fx-font-weight: bold; -fx-alignment: center;" textAlignment="CENTER" textFill="#ff3434" wrapText="true">
-		               <font>
-		                  <Font size="18.0" />
-		               </font>
-		            </Label>
-		            <Label fx:id="success" alignment="CENTER" contentDisplay="CENTER" layoutX="863.0" layoutY="536.0" prefHeight="31.0" prefWidth="317.0" style="-fx-text-alignment: center; -fx-font-weight: bold; -fx-alignment: center;" textAlignment="CENTER" textFill="#4dff00" wrapText="true">
-		               <font>
-		                  <Font size="18.0" />
-		               </font>
-		            </Label>
-		            <Button fx:id="logout" layoutX="945.0" layoutY="376.0" mnemonicParsing="false" onAction="#logout" prefHeight="68.0" prefWidth="155.0" style="-fx-background-radius: 10px;" text="Tornar">
-		               <font>
-		                  <Font size="15.0" />
-		               </font>
-		               <cursor>
-		                  <Cursor fx:constant="HAND" />
-		               </cursor>
-		            </Button>
-		         </children>
-		      </Pane>
+		      <Pane prefHeight="700.0" prefWidth="1245.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="700.0" layoutX="506.0" opacity="0.5" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="739.0" />
+            <Label prefHeight="115.0" prefWidth="506.0" style="-fx-font-weight: bold; -fx-text-alignment: center; -fx-alignment: center;" text="PROJECTE GESTIÓ HOTELERA" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="nom_usuari" focusColor="#e69e6c" layoutX="555.0" layoutY="143.0" prefHeight="25.0" prefWidth="300.0" />
+            <Label layoutX="555.0" layoutY="120.0" prefHeight="29.0" prefWidth="136.0" style="-fx-font-weight: bold;" text="Nom d'Usuari" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="555.0" layoutY="208.0" prefHeight="29.0" prefWidth="136.0" style="-fx-font-weight: bold;" text="Contrasenya" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="contrasenya" focusColor="#e69e6c" layoutX="555.0" layoutY="240.0" prefHeight="25.0" prefWidth="300.0" />
+            <Label layoutX="555.0" layoutY="303.0" prefHeight="29.0" prefWidth="136.0" style="-fx-font-weight: bold;" text="Nom" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="nom" focusColor="#e69e6c" layoutX="555.0" layoutY="330.0" prefHeight="25.0" prefWidth="300.0" />
+            <Label layoutX="555.0" layoutY="386.0" prefHeight="29.0" prefWidth="136.0" style="-fx-font-weight: bold;" text="Cognom" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="cognom1" focusColor="#e69e6c" layoutX="555.0" layoutY="409.0" prefHeight="25.0" prefWidth="300.0" />
+            <Label layoutX="555.0" layoutY="469.0" prefHeight="29.0" prefWidth="136.0" style="-fx-font-weight: bold;" text="Segon cognom" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="cognom2" focusColor="#e69e6c" layoutX="555.0" layoutY="492.0" prefHeight="25.0" prefWidth="300.0" />
+            <Label layoutX="918.0" layoutY="120.0" prefHeight="29.0" prefWidth="136.0" style="-fx-font-weight: bold;" text="DNI" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="dni" focusColor="#e69e6c" layoutX="917.0" layoutY="143.0" prefHeight="25.0" prefWidth="300.0" />
+            <Label layoutX="506.0" layoutY="48.0" prefHeight="40.0" prefWidth="739.0" style="-fx-alignment: center; -fx-font-weight: bold;" text="REGISTRE" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <Label layoutX="918.0" layoutY="208.0" prefHeight="29.0" prefWidth="136.0" style="-fx-font-weight: bold;" text="Passaport" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="passaport" focusColor="#e69e6c" layoutX="917.0" layoutY="240.0" prefHeight="25.0" prefWidth="300.0" />
+            <Label layoutX="918.0" layoutY="303.0" prefHeight="29.0" prefWidth="136.0" style="-fx-font-weight: bold;" text="Nacionalitat" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="nacionalitat" focusColor="#e69e6c" layoutX="917.0" layoutY="330.0" prefHeight="25.0" prefWidth="300.0" />
+            <Label layoutX="918.0" layoutY="386.0" prefHeight="29.0" prefWidth="136.0" style="-fx-font-weight: bold;" text="Telefon" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="telefon" focusColor="#e69e6c" layoutX="917.0" layoutY="409.0" prefHeight="25.0" prefWidth="300.0" />
+            <Label layoutX="918.0" layoutY="469.0" prefHeight="29.0" prefWidth="136.0" style="-fx-font-weight: bold;" text="Email" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="email" focusColor="#e69e6c" layoutX="911.0" layoutY="492.0" prefHeight="25.0" prefWidth="300.0" />
+            <JFXButton fx:id="tornar_btn" buttonType="RAISED" focusTraversable="false" layoutX="705.0" layoutY="575.0" onAction="#tornar" prefHeight="50.0" prefWidth="141.0" style="-fx-background-color: #e69e6c; -fx-font-weight: bold; -fx-text-fill: white;" styleClass="btn" text="Tornar" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="registrarse_btn" buttonType="RAISED" focusTraversable="false" layoutX="926.0" layoutY="575.0" onAction="#registrarse" prefHeight="50.0" prefWidth="141.0" style="-fx-background-color: #e69e6c; -fx-font-weight: bold;" styleClass="btn" text="Registrar-se" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="error" layoutX="506.0" layoutY="645.0" prefHeight="17.0" prefWidth="739.0" style="-fx-font-weight: bold; -fx-alignment: center;" textFill="#e80202">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="success" layoutX="506.0" layoutY="645.0" prefHeight="17.0" prefWidth="739.0" style="-fx-font-weight: bold; -fx-alignment: center;" textFill="#01cf00">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children></Pane>
 	</children>
 </AnchorPane>

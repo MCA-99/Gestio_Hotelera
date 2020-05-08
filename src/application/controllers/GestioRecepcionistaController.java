@@ -2,6 +2,7 @@ package application.controllers;
 
 import java.io.IOException;
 
+import com.jfoenix.controls.JFXButton;
 
 import application.models.Database;
 import application.models.Main;
@@ -70,10 +71,7 @@ public class GestioRecepcionistaController {
     private TextField filtroRecepcionista;
 
     @FXML
-    private Button editarRecepcionista_btn;
-
-    @FXML
-    private Button eliminarRecepcionista_btn;
+    private JFXButton editarRecepcionista_btn;
     
     public static Usuari userEdit;
     

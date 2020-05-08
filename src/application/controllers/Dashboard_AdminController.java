@@ -1,42 +1,45 @@
 package application.controllers;
 
+import com.jfoenix.controls.JFXButton;
+
 import application.models.Database;
 import application.models.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
 
 public class Dashboard_AdminController {
 	private Database db = Database.getDatabase();
-	@FXML
-    private Button habitacions_btn;
-
-    @FXML
-    private Button productes_btn;
-
-    @FXML
-    private Button gestio_pagaments_btn;
-
-    @FXML
-    private Button consulta_informes_btn;
-
-    @FXML
-    private Button logout;
-
-    @FXML
-    private Button recepcionista_btn;
-    
     @FXML
     private BorderPane subScene;
 
     @FXML
+    private JFXButton recepcionistas_btn;
+
+    @FXML
+    private JFXButton habitacions_btn;
+
+    @FXML
+    private JFXButton productes_btn;
+
+    @FXML
+    private JFXButton gestio_pagaments_btn;
+
+    @FXML
+    private JFXButton consulta_informes_btn;
+
+    @FXML
+    private JFXButton logout_btn;
+
+    @FXML
     void consulta_informes(ActionEvent event) {
+
+    }
+
+    @FXML
+    void gestio_pagaments(ActionEvent event) {
 
     }
 
@@ -52,8 +55,13 @@ public class Dashboard_AdminController {
     }
 
     @FXML
-    void gestio_pagaments(ActionEvent event) {
-
+    void logout(ActionEvent event) {
+    	try {
+    		db.clearUser();
+    		Main.changeScene("/application/views/Login.fxml");
+    	} catch(Exception e) {
+			e.printStackTrace();
+		}
     }
 
     @FXML
@@ -66,10 +74,9 @@ public class Dashboard_AdminController {
 	        e.printStackTrace();
 	    }
     }
-    
 
     @FXML
-    void recepcionista(ActionEvent event) {
+    void recepcionistas(ActionEvent event) {
     	subScene.setCenter(null);
 	    try {
 	        AnchorPane root = (AnchorPane)FXMLLoader.load(Main.class.getResource("/application/views/GestioRecepcionista.fxml"));
@@ -78,17 +85,6 @@ public class Dashboard_AdminController {
 	        e.printStackTrace();
 	    }
     }
-    
-    
-
-    @FXML
-    void logout(ActionEvent event) {
-    	try {
-    		db.clearUser();
-    		Main.changeScene("/application/views/Login.fxml");
-    	} catch(Exception e) {
-			e.printStackTrace();
-		}
-    }
 
 }
+

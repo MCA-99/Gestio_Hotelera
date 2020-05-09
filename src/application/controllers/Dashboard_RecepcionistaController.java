@@ -1,37 +1,35 @@
 package application.controllers;
 
+import com.jfoenix.controls.JFXButton;
+
 import application.models.Database;
 import application.models.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
+import javafx.scene.layout.BorderPane;
 
 public class Dashboard_RecepcionistaController {
-
-
 	private Database db = Database.getDatabase();
-	@FXML
-    private Button gestio_clients_btn;
+    @FXML
+    private BorderPane subScene;
 
     @FXML
-    private Button serveis_extra_btn;
+    private JFXButton gestio_clients_btn;
 
     @FXML
-    private Button reserva_habitacions_btn;
+    private JFXButton serveis_extra_btn;
 
     @FXML
-    private Button gestio_pagaments_btn;
+    private JFXButton reserva_habitacions_btn;
 
     @FXML
-    private Button consulta_informes_btn;
+    private JFXButton gestio_pagaments_btn;
 
     @FXML
-    private Button logout_btn;
+    private JFXButton consulta_informes_btn;
+
+    @FXML
+    private JFXButton logout_btn;
 
     @FXML
     void consulta_informes(ActionEvent event) {
@@ -68,5 +66,5 @@ public class Dashboard_RecepcionistaController {
 
     }
 
-
 }
+

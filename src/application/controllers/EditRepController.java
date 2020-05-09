@@ -75,7 +75,7 @@ public class EditRepController {
     	dni.setText(userEdit.getDNI());
     	passaport.setText(userEdit.getPassaport());
     	nacionalitat.setText(userEdit.getNacionalitat());
-    	telefon.setText(Integer.toString(userEdit.getTelefon()));
+    	telefon.setText(userEdit.getTelefon());
     	email.setText(userEdit.getEmail());
     	actiu.setSelected(userEdit.getActivo());
     }

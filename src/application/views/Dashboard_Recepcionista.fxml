@@ -1,56 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1245.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.Dashboard_RecepcionistaController">
    <children>
-	<BorderPane>
-	   <bottom>
-      	      <Pane prefHeight="675.0" prefWidth="1230.0" BorderPane.alignment="CENTER">
-      	         <children>
-      	            <Button fx:id="gestio_clients_btn" layoutX="23.0" layoutY="122.0" mnemonicParsing="false" onAction="#gestio_clients" prefHeight="68.0" prefWidth="165.0" text="Gestió de Clients">
-      	               <font>
-      	                  <Font size="13.0" />
-      	               </font>
-      	            </Button>
-      	            <Button fx:id="serveis_extra_btn" layoutX="23.0" layoutY="201.0" mnemonicParsing="false" onAction="#serveis_extra" prefHeight="68.0" prefWidth="165.0" text="Us Serveis Extres">
-      	               <font>
-      	                  <Font size="13.0" />
-      	               </font>
-      	            </Button>
-      	            <Button fx:id="reserva_habitacions_btn" layoutX="23.0" layoutY="280.0" mnemonicParsing="false" onAction="#reserva_habitacions" prefHeight="68.0" prefWidth="165.0" text="Reserva d' Habitacións">
-      	               <font>
-      	                  <Font size="13.0" />
-      	               </font>
-      	            </Button>
-      	            <Button fx:id="gestio_pagaments_btn" layoutX="23.0" layoutY="363.0" mnemonicParsing="false" onAction="#gestio_pagaments" prefHeight="68.0" prefWidth="165.0" text="Gestió de Pagaments">
-      	               <font>
-      	                  <Font size="13.0" />
-      	               </font>
-      	            </Button>
-      	            <Button fx:id="consulta_informes_btn" layoutX="23.0" layoutY="443.0" mnemonicParsing="false" onAction="#consulta_informes" prefHeight="68.0" prefWidth="165.0" text="Consulta i Informes">
-      	               <font>
-      	                  <Font size="13.0" />
-      	               </font>
-      	            </Button>
-      	            <Text layoutX="571.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Utilitza les opcións per fer accións" wrappingWidth="408.13671875">
-      	               <font>
-      	                  <Font size="27.0" />
-      	               </font>
-      	            </Text>
-      	            <Button fx:id="logout_btn" layoutX="23.0" layoutY="573.0" mnemonicParsing="false" onAction="#logout" prefHeight="68.0" prefWidth="165.0" text="Sortir">
-      	               <font>
-      	                  <Font size="13.0" />
-      	               </font>
-      	            </Button>
-      	         </children>
-            </Pane>
-	   </bottom>
-	</BorderPane>
-	</children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="708.0" layoutX="-3.0" layoutY="-4.0" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="1251.0" />
+      <Pane layoutX="10.0" layoutY="10.0" prefHeight="702.0" prefWidth="1245.0">
+         <children>
+            <BorderPane fx:id="subScene" layoutX="218.0" layoutY="44.0" prefHeight="615.0" prefWidth="1013.0" style="-fx-background-color: white;">
+               <center>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Utilitza les opcións per fer accións" wrappingWidth="408.13671875" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Text>
+               </center>
+            </BorderPane>
+            <JFXButton fx:id="gestio_clients_btn" buttonType="RAISED" layoutX="16.0" layoutY="114.0" onAction="#gestio_clients" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #e69e6c;" text="Clients" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="serveis_extra_btn" buttonType="RAISED" layoutX="16.0" layoutY="207.0" onAction="#serveis_extra" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #e69e6c;" text="Serveis extra" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="reserva_habitacions_btn" buttonType="RAISED" layoutX="16.0" layoutY="301.0" onAction="#reserva_habitacions" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #e69e6c;" text="Reserva habitacions" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="gestio_pagaments_btn" buttonType="RAISED" layoutX="16.0" layoutY="393.0" onAction="#gestio_pagaments" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #e69e6c;" text="Gestio pagaments" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="consulta_informes_btn" buttonType="RAISED" layoutX="16.0" layoutY="487.0" onAction="#consulta_informes" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #e69e6c;" text="Consulta infromes" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="logout_btn" buttonType="RAISED" layoutX="16.0" layoutY="603.0" onAction="#logout" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #e69e6c;" text="Sortir" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>

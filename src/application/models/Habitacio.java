@@ -8,7 +8,7 @@ public class Habitacio {
 	
 	private int id_habitacio;
 	private int planta;
-	private int preu;
+	private Float preu;
 	private String estat;
 	private String tipus;
 	private String descripcio;
@@ -38,11 +38,11 @@ public class Habitacio {
 		this.planta = planta;
 	}
 
-	public int getPreu() {
+	public Float getPreu() {
 		return preu;
 	}
 
-	public void setPreu(int preu) {
+	public void setPreu(Float preu) {
 		this.preu = preu;
 	}
 

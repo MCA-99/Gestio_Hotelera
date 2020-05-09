@@ -30,7 +30,7 @@ import javafx.stage.WindowEvent;
 public class GestioRecepcionistaController {
 
     private Database db = Database.getDatabase();
-    public Stage stage;
+    public static Usuari userEdit;
 	@FXML
     private TableView<Usuari> tablaRecepcionista;
 	
@@ -59,7 +59,7 @@ public class GestioRecepcionistaController {
     private TableColumn<Usuari, String> nacionalitat_column;
 
     @FXML
-    private TableColumn<Usuari, Integer> telefon_column;
+    private TableColumn<Usuari, String> telefon_column;
 
     @FXML
     private TableColumn<Usuari, String> email_column;
@@ -73,7 +73,9 @@ public class GestioRecepcionistaController {
     @FXML
     private JFXButton editarRecepcionista_btn;
     
-    public static Usuari userEdit;
+    @FXML
+    private Label error;
+    
     
     @FXML
     void editarRecepcionista(ActionEvent event) {
@@ -81,7 +83,7 @@ public class GestioRecepcionistaController {
     	if (tablaRecepcionista.getSelectionModel().getSelectedItem() != null) {
     		userEdit = tablaRecepcionista.getSelectionModel().getSelectedItem();
     		try {
-        		stage = new Stage();
+    			Stage stage = new Stage();
         		Parent root = FXMLLoader.load(getClass().getResource("/application/views/EditRep.fxml"));
         		Scene scene = new Scene(root);
         		stage.setTitle("Recepcionista");
@@ -120,7 +122,7 @@ public class GestioRecepcionistaController {
     	dni_column.setCellValueFactory(new PropertyValueFactory<Usuari, String>("DNI"));
     	passaport_column.setCellValueFactory(new PropertyValueFactory<Usuari, String>("passaport"));
     	nacionalitat_column.setCellValueFactory(new PropertyValueFactory<Usuari, String>("nacionalitat"));
-    	telefon_column.setCellValueFactory(new PropertyValueFactory<Usuari, Integer>("telefon"));
+    	telefon_column.setCellValueFactory(new PropertyValueFactory<Usuari, String>("telefon"));
     	email_column.setCellValueFactory(new PropertyValueFactory<Usuari, String>("email"));
     	activo_column.setCellValueFactory(new PropertyValueFactory<Usuari, Boolean>("activo"));
     	

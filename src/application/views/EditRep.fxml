@@ -7,11 +7,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="703.0" prefWidth="380.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.EditRepController">
+<AnchorPane prefHeight="703.0" prefWidth="380.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.EditRepController">
    <children>
-      <JFXTextField fx:id="nom" layoutX="34.0" layoutY="172.0" prefHeight="25.0" prefWidth="309.0" />
-      <JFXTextField fx:id="cognom" layoutX="34.0" layoutY="225.0" prefHeight="25.0" prefWidth="309.0" />
-      <JFXTextField fx:id="nom_usuari" layoutX="34.0" layoutY="119.0" prefHeight="25.0" prefWidth="309.0" />
+      <JFXTextField fx:id="nom_usuari" focusColor="#e69e6c" focusTraversable="false" layoutX="34.0" layoutY="172.0" prefHeight="25.0" prefWidth="309.0" />
+      <JFXTextField fx:id="cognom" focusColor="#e69e6c" focusTraversable="false" layoutX="34.0" layoutY="225.0" prefHeight="25.0" prefWidth="309.0" />
+      <JFXTextField fx:id="nom" focusColor="#e69e6c" layoutX="34.0" layoutY="118.0" prefHeight="25.0" prefWidth="309.0" />
       <Text layoutX="34.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom usuari:" wrappingWidth="92.08984375" />
       <Text layoutX="34.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom:" wrappingWidth="92.08984375" />
       <Text layoutX="34.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cognom:" wrappingWidth="92.08984375" />
@@ -21,18 +21,18 @@
          </font>
       </Text>
       <Text layoutX="34.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Segon cognom:" wrappingWidth="92.08984375" />
-      <JFXTextField fx:id="segon_cognom" layoutX="34.0" layoutY="277.0" prefHeight="25.0" prefWidth="309.0" />
+      <JFXTextField fx:id="segon_cognom" focusColor="#e69e6c" focusTraversable="false" layoutX="34.0" layoutY="277.0" prefHeight="25.0" prefWidth="309.0" />
       <Text layoutX="36.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DNI" wrappingWidth="92.08984375" />
-      <JFXTextField fx:id="dni" layoutX="34.0" layoutY="331.0" prefHeight="25.0" prefWidth="309.0" />
+      <JFXTextField fx:id="dni" focusColor="#e69e6c" focusTraversable="false" layoutX="34.0" layoutY="331.0" prefHeight="25.0" prefWidth="309.0" />
       <Text layoutX="34.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passaport" wrappingWidth="92.08984375" />
-      <JFXTextField fx:id="passaport" layoutX="34.0" layoutY="388.0" prefHeight="25.0" prefWidth="309.0" />
-      <JFXTextField fx:id="nacionalitat" layoutX="34.0" layoutY="447.0" prefHeight="25.0" prefWidth="309.0" />
+      <JFXTextField fx:id="passaport" focusColor="#e69e6c" focusTraversable="false" layoutX="34.0" layoutY="388.0" prefHeight="25.0" prefWidth="309.0" />
+      <JFXTextField fx:id="nacionalitat" focusColor="#e69e6c" focusTraversable="false" layoutX="34.0" layoutY="447.0" prefHeight="25.0" prefWidth="309.0" />
       <Text layoutX="36.0" layoutY="444.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nacionalitat" wrappingWidth="92.08984375" />
       <Text layoutX="34.0" layoutY="495.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefon" wrappingWidth="92.08984375" />
-      <JFXTextField fx:id="telefon" layoutX="34.0" layoutY="499.0" prefHeight="25.0" prefWidth="309.0" />
+      <JFXTextField fx:id="telefon" focusColor="#e69e6c" focusTraversable="false" layoutX="34.0" layoutY="499.0" prefHeight="25.0" prefWidth="309.0" />
       <Text layoutX="34.0" layoutY="549.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="92.08984375" />
-      <JFXTextField fx:id="email" layoutX="34.0" layoutY="553.0" prefHeight="25.0" prefWidth="309.0" />
-      <JFXButton fx:id="guardar_btn" layoutX="72.0" layoutY="649.0" onAction="#guardar" prefHeight="25.0" prefWidth="233.0" style="-fx-font-weight: bold; -fx-border-color: black;" text="GUARDAR" />
-      <JFXCheckBox fx:id="actiu" layoutX="36.0" layoutY="604.0" prefHeight="18.0" prefWidth="158.0" text="Actiu" />
+      <JFXTextField fx:id="email" focusColor="#e69e6c" focusTraversable="false" layoutX="34.0" layoutY="553.0" prefHeight="25.0" prefWidth="309.0" />
+      <JFXButton fx:id="guardar_btn" focusTraversable="false" layoutX="72.0" layoutY="649.0" onAction="#guardar" prefHeight="25.0" prefWidth="233.0" style="-fx-font-weight: bold; -fx-border-color: black;" text="GUARDAR" />
+      <JFXCheckBox fx:id="actiu" checkedColor="#e69e6c" layoutX="36.0" layoutY="604.0" prefHeight="18.0" prefWidth="158.0" text="Actiu" />
    </children>
 </AnchorPane>

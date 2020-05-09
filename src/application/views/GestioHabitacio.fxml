@@ -1,39 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.GestioHabitacioController">
    <children>
-      <BorderPane prefHeight="615.0" prefWidth="1013.0">
-         <center>
-            <TableView fx:id="tablaHabitacio" prefHeight="331.0" prefWidth="1013.0" BorderPane.alignment="CENTER">
-              <columns>
-                <TableColumn fx:id="id_column" prefWidth="76.0" text="id" />
-                <TableColumn fx:id="planta_column" prefWidth="99.0" text="planta" />
-                  <TableColumn fx:id="preu_column" prefWidth="124.0" text="preu" />
-                  <TableColumn fx:id="estat_column" prefWidth="117.0" text="estat" />
-                  <TableColumn fx:id="tipus_column" prefWidth="123.0" text="tipus" />
-                  <TableColumn fx:id="descripcio_column" prefWidth="263.0" text="descripció" />
-                  <TableColumn fx:id="caracteristiques_column" minWidth="0.0" prefWidth="210.0" text="característiques" />
-              </columns>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000203" height="615.0" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="1013.0" />
+      <Pane prefHeight="615.0" prefWidth="1013.0" stylesheets="@table.css">
+         <children>
+            <TextField fx:id="filtreHabitacio" layoutY="14.0" onKeyReleased="#buscarRecepcionista" prefHeight="33.0" prefWidth="242.0" promptText="Buscar" style="-fx-border-color: #e69e6c; -fx-background-color: white;" />
+            <TableView fx:id="tablaHabitacio" layoutY="63.0" prefHeight="552.0" prefWidth="1013.0" style="-fx-background-color: white; -fx-border-color: #e69e6c; -fx-padding: 0;" stylesheets="@application.css">
+               <columns>
+                  <TableColumn fx:id="id_column" prefWidth="45.0" text="Id" />
+                  <TableColumn fx:id="planta_column" prefWidth="114.0" text="Planta" />
+                  <TableColumn fx:id="preu_column" prefWidth="83.0" text="Preu" />
+                  <TableColumn fx:id="estat_column" prefWidth="206.0" text="Estat" />
+                  <TableColumn fx:id="tipus_column" prefWidth="102.0" text="Tipus" />
+                  <TableColumn fx:id="descripcio_column" prefWidth="90.0" text="Descripció" />
+                  <TableColumn fx:id="caracteristiques_column" prefWidth="89.0" text="Característiques" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
             </TableView>
-         </center>
-         <top>
-            <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-              <items>
-                  <TextField fx:id="filtroHabitacio" onKeyReleased="#buscarHabitacio" prefHeight="25.0" prefWidth="242.0" promptText="Buscar" />
-                  <Button fx:id="editarHabitacio_btn" mnemonicParsing="false" onAction="#editarHabitacio" prefHeight="25.0" prefWidth="114.0" text="Editar" />
-                  <Button fx:id="eliminarHabitacio_btn" mnemonicParsing="false" onAction="#eliminarHabitacio" prefHeight="25.0" prefWidth="111.0" text="Eliminar" />
-                  <Button fx:id="afegirHabitacio_btn" mnemonicParsing="false" onAction="#afegirHabitacio" prefHeight="25.0" prefWidth="111.0" text="Afegir Habitació" />
-              </items>
-            </ToolBar>
-         </top>
-      </BorderPane>
+            <JFXButton fx:id="editarHabitacio_btn" layoutX="700.0" layoutY="14.0" onAction="#editarHabitacio" prefHeight="33.0" prefWidth="139.0" style="-fx-background-color: white; -fx-border-color: #e69e6c;" text="Editar" />
+            <JFXButton fx:id="afegir_btn" layoutX="860.0" layoutY="14.0" onAction="#afegir" prefHeight="33.0" prefWidth="139.0" style="-fx-background-color: white; -fx-border-color: #e69e6c;" text="Afegir" />
+            <Label fx:id="error" layoutX="244.0" layoutY="22.0" prefHeight="20.0" prefWidth="456.0" style="-fx-alignment: center;" textAlignment="CENTER" textFill="#c60000">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

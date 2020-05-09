@@ -70,7 +70,7 @@ public class Database {
 					u.setDNI(rs.getString("DNI"));
 					u.setPassaport(rs.getString("passaport"));
 					u.setNacionalitat(rs.getString("nacionalitat"));
-					u.setTelefon(rs.getInt("telefon"));
+					u.setTelefon(rs.getString("telefon"));
 					u.setEmail(rs.getString("email"));
 					u.setActivo(rs.getBoolean("activo"));
 					
@@ -102,7 +102,7 @@ public class Database {
 				u.setDNI(rs.getString("DNI"));
 				u.setPassaport(rs.getString("passaport"));
 				u.setNacionalitat(rs.getString("nacionalitat"));
-				u.setTelefon(rs.getInt("telefon"));
+				u.setTelefon(rs.getString("telefon"));
 				u.setEmail(rs.getString("email"));
 				u.setActivo(rs.getBoolean("activo"));
 				
@@ -133,7 +133,7 @@ public class Database {
 					
 					h.setId_habitacio(rs.getInt("id_habitacio"));
 					h.setPlanta(rs.getInt("planta"));
-					h.setPreu(rs.getInt("preu"));
+					h.setPreu(rs.getFloat("preu"));
 					h.setEstat(rs.getString("estat"));
 					h.setTipus(rs.getString("tipus"));
 					h.setDescripcio(rs.getString("descripcio"));
@@ -161,7 +161,7 @@ public class Database {
 				
 				h.setId_habitacio(rs.getInt("id_habitacio"));
 				h.setPlanta(rs.getInt("planta"));
-				h.setPreu(rs.getInt("preu"));
+				h.setPreu(rs.getFloat("preu"));
 				h.setEstat(rs.getString("estat"));
 				h.setTipus(rs.getString("tipus"));
 				h.setDescripcio(rs.getString("descripcio"));
@@ -257,7 +257,7 @@ public class Database {
 				userLoged.setDNI(rs.getString("DNI"));
 				userLoged.setPassaport(rs.getString("passaport"));
 				userLoged.setNacionalitat(rs.getString("nacionalitat"));
-				userLoged.setTelefon(rs.getInt("telefon"));
+				userLoged.setTelefon(rs.getString("telefon"));
 				userLoged.setEmail(rs.getString("email"));
 				userLoged.setEstatcivil(rs.getString("estatcivil"));
 				userLoged.setOcupacio(rs.getString("ocupacio"));

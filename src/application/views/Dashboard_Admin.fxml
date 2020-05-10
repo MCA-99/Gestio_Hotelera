@@ -13,7 +13,7 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="708.0" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="1251.0" />
 		      <Pane prefHeight="702.0" prefWidth="1245.0">
 		         <children>
-            <BorderPane fx:id="subScene" layoutX="218.0" layoutY="44.0" prefHeight="615.0" prefWidth="1013.0" style="-fx-background-color: white;">
+            <BorderPane fx:id="subScene" layoutX="218.0" layoutY="44.0" prefHeight="615.0" prefWidth="1013.0" style="-fx-background-color: transparent;">
                <center>
 		            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Utilitza les opcións per fer accións" wrappingWidth="408.13671875" BorderPane.alignment="CENTER">
 		               <font>

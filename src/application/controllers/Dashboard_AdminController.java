@@ -66,13 +66,6 @@ public class Dashboard_AdminController {
 
     @FXML
     void productes(ActionEvent event) {
-    	subScene.setCenter(null);
-	    try {
-	        AnchorPane root = (AnchorPane)FXMLLoader.load(Main.class.getResource("/application/views/GestioProductes.fxml"));
-	        subScene.setCenter(root);
-	    } catch(Exception e) {
-	        e.printStackTrace();
-	    }
     }
 
     @FXML

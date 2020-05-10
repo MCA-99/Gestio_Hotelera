@@ -81,6 +81,7 @@ public class GestioRecepcionistaController {
     void editarRecepcionista(ActionEvent event) {
     	
     	if (tablaRecepcionista.getSelectionModel().getSelectedItem() != null) {
+    		error.setText("");
     		userEdit = tablaRecepcionista.getSelectionModel().getSelectedItem();
     		try {
     			Stage stage = new Stage();
@@ -90,20 +91,15 @@ public class GestioRecepcionistaController {
         		stage.setScene(scene);
         		stage.show();
         		stage.setOnCloseRequest(e ->{
-        			tablaRecepcionista.setItems(db.getUsuaris());
+        			tablaRecepcionista.setItems(db.getUsuaris(filtroRecepcionista.getText()));
         		}); 
     		} catch(Exception e) {
     			e.printStackTrace();
     		}
     	}else {
-    		System.out.println("Selecciona un registre.");
+    		error.setText("Selecciona un registre.");
     	}
     	
-    }
-    
-    @FXML
-    void eliminarRecepcionista(ActionEvent event) {
-    	System.out.println("Eliminando...");
     }
 
     @FXML

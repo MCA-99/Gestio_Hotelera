@@ -272,26 +272,6 @@ public class Database {
 		return resultado;
 	}
 	
-	public void insertUsuari(String nom_usuari, String contrasenya, String nom, String cognom1, String cognom2, String DNI, String passaport, String nacionalitat, String telefon, String email) {
-		try {
-			Statement s = this.conexiondb.createStatement();
-			s.executeUpdate("INSERT INTO Usuaris (nom_usuari, contrasenya, nom, cognom1, cognom2, DNI, passaport, nacionalitat, telefon, email, rol) VALUES('"+nom_usuari+"','"+ contrasenya+"','" +nom+"','" +cognom1+"','" +cognom2+"','"+ DNI+"','"+ passaport+"','"+ nacionalitat+"','" +telefon+"','"+ email+"', 'rep')");
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-	}
-	
-	public void updateUsuari(Integer id_usuari, String nom_usuari, String nom, String cognom1, String cognom2, String DNI, String passaport, String nacionalitat, String telefon, String email, Boolean actiu) {
-		try {
-			Statement s = this.conexiondb.createStatement();
-			s.executeUpdate("UPDATE Usuaris SET nom_usuari = '"+nom_usuari+"', nom = '"+nom+"', cognom1 = '"+cognom1+"', cognom2 = '"+cognom2+"', DNI = '"+DNI+"', passaport = '"+passaport+"', nacionalitat = '"+nacionalitat+"', telefon = '"+telefon+"', email = '"+email+"', activo = "+actiu+" WHERE id_usuari ="+id_usuari);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
 	
 	public String getMD5(String contrasenya) {
 		String resultado = "";

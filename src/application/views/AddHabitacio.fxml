@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="703.0" prefWidth="780.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.AddHabitacioController">
+   <children>
+      <JFXTextField fx:id="preu" focusColor="#e69e6c" focusTraversable="false" layoutX="34.0" layoutY="172.0" prefHeight="25.0" prefWidth="309.0" />
+      <JFXTextField fx:id="planta" focusColor="#e69e6c" layoutX="34.0" layoutY="118.0" prefHeight="25.0" prefWidth="309.0" />
+      <Text layoutX="34.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Planta:" wrappingWidth="92.08984375">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="34.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Preu:" wrappingWidth="92.08984375">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="34.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estat:" wrappingWidth="92.08984375">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="249.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center; -fx-font-weight: bold;" text="Editar habitació" textAlignment="CENTER" wrappingWidth="281.13671875">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Text>
+      <Text layoutX="36.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipus:" wrappingWidth="106.08984375">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="36.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Descripcio:" wrappingWidth="92.08984375">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <JFXButton fx:id="guardar_btn" focusTraversable="false" layoutX="273.0" layoutY="646.0" onAction="#guardar" prefHeight="25.0" prefWidth="233.0" style="-fx-font-weight: bold; -fx-border-color: black;" text="GUARDAR" />
+      <JFXComboBox fx:id="estat" focusColor="#e69e6c" layoutX="34.0" layoutY="225.0" prefHeight="25.0" prefWidth="309.0" />
+      <JFXComboBox fx:id="tipus" focusColor="#e69e6c" layoutX="34.0" layoutY="277.0" prefHeight="25.0" prefWidth="309.0" />
+      <JFXTextArea fx:id="descripcio" focusColor="#e69e6c" layoutX="34.0" layoutY="342.0" prefHeight="262.0" prefWidth="309.0" />
+      <JFXTextArea fx:id="caracteristiques" focusColor="#e69e6c" layoutX="413.0" layoutY="126.0" prefHeight="262.0" prefWidth="309.0" />
+      <Text layoutX="413.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Característiques:" wrappingWidth="119.08984375">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Label fx:id="error" layoutX="246.0" layoutY="618.0" prefHeight="17.0" prefWidth="288.0" style="-fx-alignment: center;" textAlignment="CENTER" textFill="#d70000">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

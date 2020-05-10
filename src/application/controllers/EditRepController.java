@@ -12,6 +12,7 @@ import application.models.Usuari;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Label;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -60,10 +61,19 @@ public class EditRepController {
     private JFXButton guardar_btn;
     
     @FXML
+    private Label error;
+    
+    @FXML
     void guardar(ActionEvent event) {
-    	db.updateUsuari(userEdit.getId_usuari(), nom_usuari.getText(), nom.getText(), cognom.getText(), segon_cognom.getText(), dni.getText(), passaport.getText(), nacionalitat.getText(), telefon.getText(), email.getText(), actiu.isSelected());
-    	Stage stage = (Stage) guardar_btn.getScene().getWindow();
-    	stage.fireEvent(new WindowEvent(stage, WindowEvent.WINDOW_CLOSE_REQUEST));
+    	if(!nom_usuari.getText().isEmpty() && !nom.getText().isEmpty() && !cognom.getText().isEmpty() && !dni.getText().isEmpty() && !passaport.getText().isEmpty() && !nacionalitat.getText().isEmpty() && !telefon.getText().isEmpty() && !email.getText().isEmpty()){
+    		error.setText("");
+    		userEdit.update(userEdit.getId_usuari(), nom_usuari.getText(), nom.getText(), cognom.getText(), segon_cognom.getText(), dni.getText(), passaport.getText(), nacionalitat.getText(), telefon.getText(), email.getText(), actiu.isSelected());
+        	Stage stage = (Stage) guardar_btn.getScene().getWindow();
+        	stage.fireEvent(new WindowEvent(stage, WindowEvent.WINDOW_CLOSE_REQUEST));
+    	}else {
+    		error.setText("Omple tots els camps.");
+    	}
+    	
     }
     
     @FXML
